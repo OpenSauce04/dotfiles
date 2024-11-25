@@ -1,6 +1,6 @@
 # == Start GNU screen ==
-if [[ $TERM != *"screen"* ]]; then
-	exec screen
+if [[ $TERM != *"tmux"* ]]; then
+	exec tmux
 	exit
 fi
 
