@@ -1,4 +1,5 @@
 ;; Set up sources
+(source gnu)
 (source melpa)
 
 ;; Install packages
