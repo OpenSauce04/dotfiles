@@ -1,0 +1,5 @@
+;; Set up sources
+(source melpa)
+
+;; Install packages
+(depends-on "hl-todo")
