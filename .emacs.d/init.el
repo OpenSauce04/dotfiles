@@ -44,3 +44,6 @@
 
 ;; Enable TODO highlighting
 (global-hl-todo-mode 1)
+
+;; Enable rainbow delimiters whenever a file is opened (no global mode exists)
+(add-hook 'find-file-hook 'rainbow-delimiters-mode 1)
