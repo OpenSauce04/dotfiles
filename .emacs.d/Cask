@@ -2,5 +2,8 @@
 (source gnu)
 (source melpa)
 
+;; Install themes
+(depends-on "lush-theme")
+
 ;; Install packages
 (depends-on "hl-todo")

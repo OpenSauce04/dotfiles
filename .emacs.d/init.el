@@ -1,5 +1,15 @@
 
 
+;;==== PACKAGES =====================================================================================
+;; Shut up package-initialize warning
+(setq warning-suppress-log-types '((package reinitialization)))
+
+;; Start Cask and load installed packages
+(require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
+(cask-initialize)
+
+
+
 
 ;;==== VISUAL TWEAKS =================================================================================
 ;;# Basic visual settings
@@ -14,17 +24,10 @@
 (setq initial-scratch-message nil)
 
 ;; Load theme
-(load-theme 'tango-dark)
+(load-theme 'lush t)
 
-
-
-;;==== PACKAGES =====================================================================================
-;; Shut up package-initialize warning
-(setq warning-suppress-log-types '((package reinitialization)))
-
-;; Start Cask and load installed packages
-(require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
-(cask-initialize)
+;; Set font
+(set-frame-font "Cascadia Mono Medium 11" nil t)
 
 
 
