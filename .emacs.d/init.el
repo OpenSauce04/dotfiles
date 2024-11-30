@@ -56,3 +56,6 @@
 (setq too-hardcore-return t)
 (require 'hardcore-mode)
 (global-hardcore-mode)
+
+(require 'ws-butler)
+(add-hook 'prog-mode-hook #'ws-butler-mode)
