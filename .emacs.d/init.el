@@ -46,6 +46,9 @@
 (require 'ido)
 (ido-mode t)
 
+;; Enable dtrt-indent mode
+(dtrt-indent-global-mode 1)
+
 ;; Enable TODO highlighting
 (global-hl-todo-mode 1)
 
