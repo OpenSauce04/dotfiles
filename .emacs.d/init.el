@@ -47,3 +47,6 @@
 
 ;; Enable rainbow delimiters whenever a file is opened (no global mode exists)
 (add-hook 'find-file-hook 'rainbow-delimiters-mode 1)
+
+;; Set tab width to 4 spaces
+(setq-default tab-width 4)
