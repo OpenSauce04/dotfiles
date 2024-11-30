@@ -38,6 +38,10 @@
 ;; Disable backups
 (setq make-backup-files nil)
 
+;; Disable C-x C-c in GUI mode
+(if window-system
+    (global-unset-key (kbd "C-x C-c")))
+
 ;; Enable ido mode
 (require 'ido)
 (ido-mode t)
