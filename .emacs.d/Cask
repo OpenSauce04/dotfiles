@@ -10,4 +10,5 @@
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
 (depends-on "rainbow-delimiters")
+(depends-on "simple-httpd")
 (depends-on "ws-butler")

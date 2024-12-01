@@ -64,5 +64,9 @@
 (require 'hardcore-mode)
 (global-hardcore-mode)
 
+;; Trim trailing whitespaces
 (require 'ws-butler)
 (add-hook 'prog-mode-hook #'ws-butler-mode)
+
+;; Set simple-httpd port
+(setq httpd-port 8000)
