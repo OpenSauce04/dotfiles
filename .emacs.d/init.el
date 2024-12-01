@@ -35,6 +35,9 @@
 ;; Enable rainbow delimiters whenever a file is opened (no global mode exists)
 (add-hook 'find-file-hook 'rainbow-delimiters-mode 1)
 
+;; Only show fringes on right edge of buffers
+(fringe-mode '(0 . nil))
+
 ;; Variable font sizes for markdown headers
 (custom-set-faces
  '(markdown-header-delimiter-face ((t (:inherit font-lock-function-name-face :underline t :weight bold))) t)
