@@ -9,6 +9,7 @@
 (depends-on "dtrt-indent")
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
+(depends-on "markdown-mode")
 (depends-on "rainbow-delimiters")
 (depends-on "simple-httpd")
 (depends-on "ws-butler")

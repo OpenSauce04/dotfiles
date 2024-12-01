@@ -74,3 +74,13 @@
 
 ;; Set simple-httpd port
 (setq httpd-port 8000)
+
+;; Variable font sizes for markdown headers
+(custom-set-faces
+ '(markdown-header-delimiter-face ((t (:inherit font-lock-function-name-face :underline t :weight bold))) t)
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 1.5))) t)
+ '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.3))) t)
+ '(markdown-header-face-3 ((t (:inherit markdown-header-face :underline t :height 1.2))) t)
+ '(markdown-header-face-4 ((t (:inherit markdown-header-face :underline t :height 1.1))) t)
+ '(markdown-header-face-5 ((t (:inherit markdown-header-face :underline t))) t)
+ '(markdown-header-face-6 ((t (:inherit markdown-header-face :underline t))) t))
