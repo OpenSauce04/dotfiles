@@ -42,6 +42,9 @@
 (if window-system
     (global-unset-key (kbd "C-x C-c")))
 
+;; Always follow symlinks rather than asking
+(setq vc-follow-symlinks t)
+
 ;; Enable ido mode
 (require 'ido)
 (ido-mode t)
