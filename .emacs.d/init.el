@@ -88,3 +88,40 @@
 
 ;; Set simple-httpd port
 (setq httpd-port 8000)
+
+
+
+
+;;==== TREE-SITTER ========================================================================================
+;; Set list of tree-sitter grammar sources
+(setq treesit-language-source-alist
+      '(
+        (bash "https://github.com/tree-sitter/tree-sitter-bash")
+        (cmake "https://github.com/uyha/tree-sitter-cmake")
+        (css "https://github.com/tree-sitter/tree-sitter-css")
+        (elisp "https://github.com/Wilfred/tree-sitter-elisp")
+        (html "https://github.com/tree-sitter/tree-sitter-html")
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+        (make "https://github.com/alemuller/tree-sitter-make")
+        (python "https://github.com/tree-sitter/tree-sitter-python")
+        (ruby "https://github.com/tree-sitter/tree-sitter-ruby")
+        ))
+
+;; Define function to install all grammars automatically
+(defun treesit-install-all-language-grammars ()
+  (interactive)
+  (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist)))
+
+;; Remap major modes to tree-sitter equivalents
+(setq major-mode-remap-alist
+      '(
+        (bash-mode . bash-ts-mode)
+        (cmake-mode . cmake-ts-mode)
+        (css-mode . css-ts-mode)
+        (elisp-mode . elisp-ts-mode)
+        (html-mode . html-ts-mode)
+        (javascript-mode . js-ts-mode)
+        (make-mode . make-ts-mode)
+        (python-mode . python-ts-mode)
+        (ruby-mode . ruby-ts-mode)
+        ))

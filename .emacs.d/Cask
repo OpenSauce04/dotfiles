@@ -6,6 +6,7 @@
 (depends-on "lush-theme")
 
 ;; Install packages
+(depends-on "cmake-mode")
 (depends-on "dtrt-indent")
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
