@@ -9,6 +9,7 @@
 (depends-on "cmake-mode")
 (depends-on "crystal-mode")
 (depends-on "dtrt-indent")
+(depends-on "elcord")
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
 (depends-on "markdown-mode")

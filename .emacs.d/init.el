@@ -89,6 +89,12 @@
 ;; Set simple-httpd port
 (setq httpd-port 8000)
 
+;; Enable Discord rich presence when using GUI mode
+(if window-system
+    (progn
+      (require 'elcord)
+      (elcord-mode)))
+
 
 
 
