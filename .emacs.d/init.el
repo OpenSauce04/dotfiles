@@ -19,9 +19,11 @@
 (global-display-line-numbers-mode 1)
 (setq truncate-lines 1)
 
-;; Disable splash screen and startup message
+;; Use Spacemacs dashboard instead of usual Emacs splash screen and startup message
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
+(require 'dashboard)
+(dashboard-setup-startup-hook)
 
 ;; Load theme
 (load-theme 'lush t)
