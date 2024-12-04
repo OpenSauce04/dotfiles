@@ -58,9 +58,10 @@
 ;; Disable customize
 (setq custom-file "/dev/null")
 
-;; Disable backups and autosave files
+;; Disable backups, autosave, and lock files
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq create-lockfiles nil)
 
 ;; Disable C-x C-c in GUI mode
 (if window-system
