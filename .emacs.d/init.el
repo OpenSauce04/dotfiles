@@ -95,6 +95,7 @@
 (if window-system
     (progn
       (require 'elcord)
+      (setq elcord-quiet t)
       (elcord-mode)))
 
 
