@@ -23,6 +23,7 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 (require 'dashboard)
+(setq dashboard-startup-banner 'logo)
 (dashboard-setup-startup-hook)
 
 ;; Load theme
