@@ -65,6 +65,8 @@
 ;; Disable C-x C-c in GUI mode
 (if window-system
     (global-unset-key (kbd "C-x C-c")))
+;; Disable C-z
+(global-unset-key (kbd "C-z"))
 
 ;; Always follow symlinks rather than asking
 (setq vc-follow-symlinks t)
