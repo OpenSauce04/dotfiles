@@ -41,6 +41,17 @@
 ;; Only show fringes on right edge of buffers
 (fringe-mode '(0 . nil))
 
+
+;; Enable Discord rich presence when using GUI mode
+(if window-system
+    (progn
+      (require 'elcord)
+      (setq elcord-quiet t)
+      (elcord-mode)))
+
+;; Make native-comp warnings shut up
+(setq native-comp-async-report-warnings-errors nil)
+
 ;; Variable font sizes for markdown headers
 (custom-set-faces
  '(markdown-header-delimiter-face ((t (:inherit font-lock-function-name-face :underline t :weight bold))) t)
@@ -94,13 +105,6 @@
 
 ;; Set simple-httpd port
 (setq httpd-port 8000)
-
-;; Enable Discord rich presence when using GUI mode
-(if window-system
-    (progn
-      (require 'elcord)
-      (setq elcord-quiet t)
-      (elcord-mode)))
 
 
 
