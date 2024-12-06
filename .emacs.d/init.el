@@ -106,7 +106,8 @@
 ;; Set simple-httpd port
 (setq httpd-port 8000)
 
-
+;; Disable electric indent
+(electric-indent-mode 0)
 
 
 ;;==== TREE-SITTER ========================================================================================
