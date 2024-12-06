@@ -16,4 +16,5 @@
 (depends-on "markdown-mode")
 (depends-on "rainbow-delimiters")
 (depends-on "simple-httpd")
+(depends-on "typit")
 (depends-on "ws-butler")
