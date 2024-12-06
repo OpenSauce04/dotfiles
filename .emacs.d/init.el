@@ -110,6 +110,8 @@
 (electric-indent-mode 0)
 
 
+
+
 ;;==== TREE-SITTER ========================================================================================
 ;; Set list of tree-sitter grammar sources
 (setq treesit-language-source-alist
