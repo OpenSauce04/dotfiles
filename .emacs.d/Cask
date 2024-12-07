@@ -13,6 +13,7 @@
 (depends-on "elcord")
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
+(depends-on "jinx")
 (depends-on "markdown-mode")
 (depends-on "rainbow-delimiters")
 (depends-on "simple-httpd")

@@ -1,2 +1,2 @@
-app-editors/emacs athena gif jit jpeg png tiff tree-sitter Xaw3d -alsa -gtk -motif -sound -ssl
+app-editors/emacs athena dynamic-loading gif jit jpeg png tiff tree-sitter Xaw3d -alsa -gtk -motif -sound -ssl
 sys-devel/gcc jit
