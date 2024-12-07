@@ -12,12 +12,11 @@
 
 
 ;;==== VISUAL TWEAKS =================================================================================
-;;# Basic visual settings
+;;# Basic self-explainitory visual settings
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (set-scroll-bar-mode 'right)
 (global-display-line-numbers-mode 1)
-(setq truncate-lines 1)
 
 ;; Use Spacemacs dashboard instead of usual Emacs splash screen and startup message
 (setq inhibit-startup-message t)
@@ -41,6 +40,8 @@
 ;; Only show fringes on right edge of buffers
 (fringe-mode '(0 . nil))
 
+;; Only wrap on word boundaries
+(setq-default word-wrap t)
 
 ;; Enable Discord rich presence when using GUI mode
 (if window-system
