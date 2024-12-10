@@ -47,7 +47,8 @@
 (if window-system
     (progn
       (require 'elcord)
-      (setq elcord-quiet t)
+      (setq elcord-quiet t) ;; Shut up connection failure messages
+      (setq elcord-display-buffer-details nil) ;; Don't show file details in status
       (elcord-mode)))
 
 ;; Make native-comp warnings shut up
