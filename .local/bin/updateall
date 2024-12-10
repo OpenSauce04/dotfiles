@@ -1,0 +1,7 @@
+doas sh -c "emerge --sync && \
+            emerge --ask --verbose --update --newuse --deep --with-bdeps=y @world && \
+            (smart-live-rebuild -- --verbose --keep-going || true) && \
+            emacs-updater -b && \
+            emerge --ask --depclean" && \
+flatpak update -y && \
+flatpak remove --unused -y
