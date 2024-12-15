@@ -64,6 +64,10 @@
  '(markdown-header-face-5 ((t (:inherit markdown-header-face :underline t))) t)
  '(markdown-header-face-6 ((t (:inherit markdown-header-face :underline t))) t))
 
+;; Disable bell (not really visual but shh)
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)
+
 
 
 
