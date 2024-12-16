@@ -8,6 +8,9 @@
 (require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 
+;; Load Portage major modes (not yet submitted to Melpa)
+(load-file "/home/daniel/repos/portage-modes/portage-modes.el")
+
 
 
 
