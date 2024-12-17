@@ -15,6 +15,7 @@
 (depends-on "hl-todo")
 (depends-on "jinx")
 (depends-on "markdown-mode")
+(depends-on "package-lint")
 (depends-on "rainbow-delimiters")
 (depends-on "simple-httpd")
 (depends-on "typit")
