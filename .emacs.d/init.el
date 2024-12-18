@@ -118,7 +118,7 @@
 ;; Disable electric indent
 (electric-indent-mode 0)
 
-;; Better C-Backspace behaviour
+;; Better C-Backspace and C-Delete behaviour
 (defun my-backward-kill-spaces-or-char-or-word ()
   (interactive)
   (cond
@@ -130,6 +130,17 @@
     (backward-delete-char 1))))
 (global-set-key (kbd "<C-backspace>") 'my-backward-kill-spaces-or-char-or-word)
 
+(defun my-forward-kill-spaces-or-char-or-word ()
+  (interactive)
+  (cond
+   ((looking-at (rx (char word)) 1)
+    (kill-word 1))
+   ((looking-at (rx (char blank)) 1)
+    (delete-horizontal-space))
+   (t
+    (delete-forward-char 1))))
+
+(global-set-key (kbd "<C-delete>") 'my-forward-kill-spaces-or-char-or-word)
 
 
 
