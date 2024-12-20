@@ -178,6 +178,7 @@
 
 
 
+
 ;;==== TREE-SITTER ========================================================================================
 ;; Set list of tree-sitter grammar sources
 (setq treesit-language-source-alist
@@ -190,8 +191,7 @@
         (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
         (make "https://github.com/alemuller/tree-sitter-make")
         (python "https://github.com/tree-sitter/tree-sitter-python")
-        (ruby "https://github.com/tree-sitter/tree-sitter-ruby")
-        ))
+        (ruby "https://github.com/tree-sitter/tree-sitter-ruby")))
 
 ;; Define function to install all grammars automatically
 (defun treesit-install-all-language-grammars ()
@@ -209,5 +209,4 @@
         (javascript-mode . js-ts-mode)
         (make-mode . make-ts-mode)
         (python-mode . python-ts-mode)
-        (ruby-mode . ruby-ts-mode)
-        ))
+        (ruby-mode . ruby-ts-mode)))
