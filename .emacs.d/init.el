@@ -96,8 +96,14 @@
 (require 'ido)
 (ido-mode t)
 
+;; Disable electric indent
+(electric-indent-mode 0)
+
 ;; Enable dtrt-indent mode
 (dtrt-indent-global-mode 1)
+
+;; Per-language indent tweaks
+(setq js-indent-level 2)
 
 ;; Set tab width to 4 spaces
 (setq-default tab-width 4)
@@ -114,9 +120,6 @@
 
 ;; Set simple-httpd port
 (setq httpd-port 8000)
-
-;; Disable electric indent
-(electric-indent-mode 0)
 
 ;; Better C-Backspace and C-Delete behaviour
 (defun my-backward-kill-spaces-or-char-or-word ()
