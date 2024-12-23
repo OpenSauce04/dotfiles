@@ -22,3 +22,4 @@
 (depends-on "typit")
 (depends-on "wc-mode")
 (depends-on "ws-butler")
+(depends-on "yaml-mode")
