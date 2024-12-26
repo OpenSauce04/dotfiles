@@ -127,6 +127,9 @@
 (require 'ido)
 (ido-mode t)
 
+;; Enable clickable URLs
+(global-goto-address-mode)
+
 ;; Disable electric indent
 (electric-indent-mode 0)
 
