@@ -1,9 +1,0 @@
-xterm*background: black
-xterm*foreground: white
-
-xterm*termName: xterm-256color
-
-xterm*faceName: Monospace
-xterm*faceSize: 9
-
-xterm*selectToClipboard: true
