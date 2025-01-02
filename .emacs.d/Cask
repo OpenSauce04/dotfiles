@@ -6,6 +6,7 @@
 (depends-on "lush-theme")
 
 ;; Install packages
+(depends-on "cask-mode")
 (depends-on "cmake-mode")
 (depends-on "crystal-mode")
 (depends-on "dashboard")
