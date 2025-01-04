@@ -139,6 +139,10 @@
 ;; Set tab width to 4 spaces
 (setq-default tab-width 4)
 
+;; Smooth scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+
 ;; Disable arrow keys
 (setq too-hardcore-backspace t)
 (setq too-hardcore-return t)
