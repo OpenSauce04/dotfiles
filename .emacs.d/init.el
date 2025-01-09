@@ -44,6 +44,9 @@
 ;; Only wrap on word boundaries
 (setq-default word-wrap t)
 
+;; Customize wc-mode string format
+(setq wc-modeline-format "wordcount:%tw")
+
 ;; Enable Discord rich presence when using GUI mode
 (if window-system
     (progn
