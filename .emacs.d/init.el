@@ -23,6 +23,7 @@
 (setq initial-scratch-message nil)
 (require 'dashboard)
 (setq dashboard-startup-banner 'logo)
+(setq dashboard-items '((recents . 15)))
 (dashboard-setup-startup-hook)
 
 ;; Load theme
