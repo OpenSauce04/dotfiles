@@ -1,0 +1,2 @@
+www-client/luakit LUA_SINGLE_TARGET: -* luajit
+dev-lua/luafilesystem LUA_TARGETS: luajit
