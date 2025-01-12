@@ -154,6 +154,9 @@
 (setq too-hardcore-return t)
 (require 'hardcore-mode)
 (global-hardcore-mode)
+;; Don't use hardcore-mode in minibuffers
+(add-hook 'minibuffer-setup-hook (lambda () (hardcore-mode 0)))
+(add-hook 'minibuffer-exit-hook (lambda () (hardcore-mode 1)))
 
 ;; Trim trailing whitespaces
 (require 'ws-butler)
