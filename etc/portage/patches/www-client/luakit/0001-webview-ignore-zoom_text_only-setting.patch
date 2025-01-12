@@ -1,0 +1,52 @@
+From a4374ebe7a6d556f54efd1d351ebd79fbe85f8b7 Mon Sep 17 00:00:00 2001
+From: c0dev0id <sh+git@codevoid.de>
+Date: Fri, 27 Dec 2024 08:35:36 +0100
+Subject: [PATCH] webview: ignore zoom_text_only setting
+
+All settings are loaded in no particular order. Whenever the
+zoom_text_only setting was applied after the zoom_level setting,
+the zoom_level setting was set to 0.5. This happened occasionally.
+
+This commit deactivates the zoom_text_only property until there's
+a way to load the settings tables in a controlled sequence.
+
+Fixes: #1086 #1013 #922
+---
+ lib/webview.lua | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+diff --git a/lib/webview.lua b/lib/webview.lua
+index db20ed99..4eb06363 100644
+--- a/lib/webview.lua
++++ b/lib/webview.lua
+@@ -696,11 +696,11 @@ local webview_settings = {
+         default = 100,
+         desc = "The default zoom level, as a percentage, at which to draw content.",
+     },
+-    ["webview.zoom_text_only"] = {
+-        type = "boolean",
+-        default = false,
+-        desc = "Whether zooming the page should affect the size of all elements, or only the text content.",
+-    },
++--    ["webview.zoom_text_only"] = {
++--        type = "boolean",
++--        default = false,
++--        desc = "Whether zooming the page should affect the size of all elements, or only the text content.",
++--    },
+ }
+ settings.register_settings(webview_settings)
+ settings.register_settings({
+@@ -721,6 +721,10 @@ _M.add_signal("init", function (view)
+             k = k:sub(9) -- Strip off "webview." prefix
+             if k == "zoom_level" then v = v/100.0 end
+             if k == "user_agent" and v == "" then v = nil end
++            -- bug: when zoom_text_only is loaded after zoom_level,
++            -- the zoom_level resets to 0.5. Keep zoom_text_only ignored
++            -- until the settings can be applied in a controlled order
++            if k == "zoom_text_only" then return end
+             match = match and (" (matched '"..match.."')") or ""
+             msg.verbose("setting property %s = %s" .. match, k, v, match)
+             wv[k] = v
+-- 
+2.45.2
+
