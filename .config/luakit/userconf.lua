@@ -4,3 +4,6 @@ local settings = require "settings"
 local engines = settings.window.search_engines
 engines.alltheinternet = "https://www.alltheinternet.com/?q=%s"
 engines.default = engines.alltheinternet
+
+-- Disable broken hardware acceleration
+settings.webview.hardware_acceleration_policy = 'never'
