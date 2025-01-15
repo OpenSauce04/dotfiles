@@ -6,7 +6,7 @@
 
 ;; Start Cask and load installed packages
 (require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
-(cask-initialize)
+(cask--initialize)
 
 
 
