@@ -23,6 +23,7 @@
 (depends-on "rainbow-delimiters")
 (depends-on "simple-httpd")
 (depends-on "smooth-scrolling")
+(depends-on "spacious-padding")
 (depends-on "typit")
 (depends-on "wc-mode")
 (depends-on "ws-butler")

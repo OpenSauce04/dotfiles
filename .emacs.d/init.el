@@ -16,6 +16,7 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (set-scroll-bar-mode 'right)
+(spacious-padding-mode 1)
 
 ;; Enable line numbers for non-eww modes. TODO: Do this better
 (add-hook 'text-mode-hook 'display-line-numbers-mode 1)
