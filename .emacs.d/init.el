@@ -16,7 +16,10 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (set-scroll-bar-mode 'right)
-(global-display-line-numbers-mode 1)
+
+;; Enable line numbers for non-eww modes. TODO: Do this better
+(add-hook 'text-mode-hook 'display-line-numbers-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode 1)
 
 ;; Use Spacemacs dashboard instead of usual Emacs splash screen and startup message
 (setq inhibit-startup-message t)
