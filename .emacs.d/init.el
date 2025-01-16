@@ -20,6 +20,9 @@
 (set-scroll-bar-mode 'right)
 (spacious-padding-mode 1)
 
+;; Enable subtle mode line appearance option provided by spacious-padding
+(setq spacious-padding-subtle-mode-line 1)
+
 ;; Enable line numbers for non-eww modes. TODO: Do this better
 (add-hook 'text-mode-hook 'display-line-numbers-mode 1)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode 1)
