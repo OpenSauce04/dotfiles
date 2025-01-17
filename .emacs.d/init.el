@@ -162,6 +162,8 @@
 (pixel-scroll-precision-mode 1)
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
+;; Kind-of workaround/fallback for smooth-scrolling sometimes failing
+(setq scroll-conservatively most-positive-fixnum)
 
 ;; Disable arrow keys
 (setq too-hardcore-backspace t)
