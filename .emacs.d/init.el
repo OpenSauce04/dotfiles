@@ -154,7 +154,8 @@
 ;; Set tab width to 4 spaces
 (setq-default tab-width 4)
 
-;; Smooth scrolling
+;; Pixel precision scrolling + Smooth scrolling
+(pixel-scroll-precision-mode 1)
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
 
