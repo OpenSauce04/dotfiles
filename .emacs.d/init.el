@@ -19,6 +19,10 @@
 (tool-bar-mode 0)
 (set-scroll-bar-mode 'right)
 (spacious-padding-mode 1)
+(blink-cursor-mode 0)
+
+;; Enable current line highlighting for prog-mode modes
+(add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
 
 ;; Enable subtle mode line appearance option provided by spacious-padding
 (setq spacious-padding-subtle-mode-line 1)
