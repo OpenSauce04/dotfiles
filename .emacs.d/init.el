@@ -42,8 +42,12 @@
 ;; Load theme
 (load-theme 'lush t)
 
-;; Set font
-(set-frame-font "Cascadia Mono Medium 11" nil t)
+;; Set font style and size (larger font on MacOS)
+(if (eq system-type 'darwin)
+    (set-frame-font "Cascadia Mono Medium 14" nil t)
+;;else
+    (set-frame-font "Cascadia Mono Medium 11" nil t))
+
 
 ;; Enable TODO highlighting
 (global-hl-todo-mode 1)
