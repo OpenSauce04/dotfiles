@@ -1,5 +1,3 @@
-
-
 ;;==== PACKAGES =====================================================================================
 ;; Shut up package-initialize warning
 (setq warning-suppress-log-types '((package reinitialization)))
@@ -9,8 +7,6 @@
     (require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
     (require 'cask "~/.emacs.d/lisp/cask/cask.el"))
 (cask--initialize)
-
-
 
 
 ;;==== VISUAL TWEAKS =================================================================================
@@ -123,8 +119,6 @@
 "))
 
 
-
-
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
 ;; Disable customize
 (setq custom-file "/dev/null")
@@ -209,8 +203,6 @@
     (delete-forward-char 1))))
 
 (global-set-key (kbd "<C-delete>") 'my-forward-kill-spaces-or-char-or-word)
-
-
 
 
 ;;==== TREE-SITTER ========================================================================================
