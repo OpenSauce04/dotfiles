@@ -5,6 +5,7 @@
 ;; Start Cask and load installed packages
 (if (eq system-type 'gnu/linux)
     (require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
+;;else
     (require 'cask "~/.emacs.d/lisp/cask/cask.el"))
 (cask--initialize)
 
