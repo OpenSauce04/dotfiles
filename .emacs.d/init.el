@@ -1,3 +1,9 @@
+;;=== INIT ===========================================================================================
+;; Workaround for https://trac.macports.org/ticket/71528
+(if (eq system-type 'darwin)
+    (setq native-comp-enable-subr-trampolines nil))
+
+
 ;;==== PACKAGES =====================================================================================
 ;; Shut up package-initialize warning
 (setq warning-suppress-log-types '((package reinitialization)))
@@ -14,9 +20,14 @@
 ;;# Basic self-explainitory visual settings
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(set-scroll-bar-mode 'right)
 (spacious-padding-mode 1)
 (blink-cursor-mode 0)
+
+;; Conditional is a workaround MacPorts Emacs BS - Do not run the following if in terminal mode on MacOS
+(when (or (not (eq system-type 'darwin)) (window-system))
+    (set-scroll-bar-mode 'right)
+    ;; Only show fringes on right edge of buffers
+    (fringe-mode '(0 . nil)))
 
 ;; Enable current line highlighting for prog-mode modes
 (add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
@@ -51,9 +62,6 @@
 
 ;; Enable rainbow delimiters whenever a file is opened (no global mode exists)
 (add-hook 'find-file-hook 'rainbow-delimiters-mode 1)
-
-;; Only show fringes on right edge of buffers
-(fringe-mode '(0 . nil))
 
 ;; Only wrap on word boundaries
 (setq-default word-wrap t)
