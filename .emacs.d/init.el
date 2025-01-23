@@ -1,7 +1,7 @@
 ;;=== INIT ===========================================================================================
 ;; Workaround for https://trac.macports.org/ticket/71528
-(if (eq system-type 'darwin)
-    (setq native-comp-enable-subr-trampolines nil))
+(when (eq system-type 'darwin)
+  (setq native-comp-enable-subr-trampolines nil))
 
 
 ;;==== PACKAGES =====================================================================================
@@ -10,9 +10,9 @@
 
 ;; Start Cask and load installed packages
 (if (eq system-type 'gnu/linux)
-    (require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
+  (require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
 ;;else
-    (require 'cask "~/.emacs.d/lisp/cask/cask.el"))
+  (require 'cask "~/.emacs.d/lisp/cask/cask.el"))
 (cask--initialize)
 
 
@@ -25,9 +25,9 @@
 
 ;; Conditional is a workaround MacPorts Emacs BS - Do not run the following if in terminal mode on MacOS
 (when (or (not (eq system-type 'darwin)) (window-system))
-    (set-scroll-bar-mode 'right)
-    ;; Only show fringes on right edge of buffers
-    (fringe-mode '(0 . nil)))
+  (set-scroll-bar-mode 'right)
+  ;; Only show fringes on right edge of buffers
+  (fringe-mode '(0 . nil)))
 
 ;; Enable current line highlighting for prog-mode modes
 (add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
@@ -52,9 +52,9 @@
 
 ;; Set font style and size (larger font on MacOS)
 (if (eq system-type 'darwin)
-    (set-frame-font "Cascadia Mono Medium 14" nil t)
+  (set-frame-font "Cascadia Mono Medium 14" nil t)
 ;;else
-    (set-frame-font "Cascadia Mono Medium 11" nil t))
+  (set-frame-font "Cascadia Mono Medium 11" nil t))
 
 
 ;; Enable TODO highlighting
@@ -72,12 +72,11 @@
 (add-hook 'text-mode-hook 'wc-mode)
 
 ;; Enable Discord rich presence when using GUI mode
-(if window-system
-    (progn
-      (require 'elcord)
-      (setq elcord-quiet t) ;; Shut up connection failure messages
-      (setq elcord-display-buffer-details nil) ;; Don't show file details in status
-      (elcord-mode)))
+(when window-system
+  (require 'elcord)
+  (setq elcord-quiet t) ;; Shut up connection failure messages
+  (setq elcord-display-buffer-details nil) ;; Don't show file details in status
+  (elcord-mode))
 
 ;; Make native-comp warnings shut up
 (setq native-comp-async-report-warnings-errors nil)
@@ -138,8 +137,8 @@
 (setq create-lockfiles nil)
 
 ;; Disable C-x C-c in GUI mode
-(if window-system
-    (global-unset-key (kbd "C-x C-c")))
+(when window-system
+  (global-unset-key (kbd "C-x C-c")))
 ;; Disable C-z
 (global-unset-key (kbd "C-z"))
 
@@ -193,23 +192,23 @@
 (defun my-backward-kill-spaces-or-char-or-word ()
   (interactive)
   (cond
-   ((looking-back (rx (char word)) 1)
-    (backward-kill-word 1))
-   ((looking-back (rx (char blank)) 1)
-    (delete-horizontal-space t))
-   (t
-    (backward-delete-char 1))))
+    ((looking-back (rx (char word)) 1)
+      (backward-kill-word 1))
+    ((looking-back (rx (char blank)) 1)
+      (delete-horizontal-space t))
+    (t
+      (backward-delete-char 1))))
 (global-set-key (kbd "<C-backspace>") 'my-backward-kill-spaces-or-char-or-word)
 
 (defun my-forward-kill-spaces-or-char-or-word ()
   (interactive)
   (cond
-   ((looking-at (rx (char word)) 1)
-    (kill-word 1))
-   ((looking-at (rx (char blank)) 1)
-    (delete-horizontal-space))
-   (t
-    (delete-forward-char 1))))
+    ((looking-at (rx (char word)) 1)
+      (kill-word 1))
+    ((looking-at (rx (char blank)) 1)
+      (delete-horizontal-space))
+    (t
+      (delete-forward-char 1))))
 
 (global-set-key (kbd "<C-delete>") 'my-forward-kill-spaces-or-char-or-word)
 
