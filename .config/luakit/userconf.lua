@@ -5,8 +5,6 @@ local engines = settings.window.search_engines
 engines.alltheinternet = "https://www.alltheinternet.com/?q=%s"
 engines.default = engines.alltheinternet
 
--- Enable smooth scrolling
+-- Other settings
+settings.webview.hardware_acceleration_policy = 'always'
 settings.webview.enable_smooth_scrolling = true
-
--- Disable broken hardware acceleration
-settings.webview.hardware_acceleration_policy = 'never'
