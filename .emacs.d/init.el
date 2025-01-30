@@ -23,6 +23,9 @@
 (spacious-padding-mode 1)
 (blink-cursor-mode 0)
 
+;; Show in-progress key sequences with no delay
+(setq echo-keystrokes 0.001)
+
 ;; Conditional is a workaround MacPorts Emacs BS - Do not run the following if in terminal mode on MacOS
 (when (or (not (eq system-type 'darwin)) (window-system))
   (set-scroll-bar-mode 'right)
