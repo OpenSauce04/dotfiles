@@ -167,8 +167,10 @@
 ;; Set tab width to 4 spaces
 (setq-default tab-width 4)
 
-;; Pixel precision scrolling + Smooth scrolling
-(pixel-scroll-precision-mode 1)
+;; Per-pixel scrolling
+;;(pixel-scroll-precision-mode 1)
+
+;; Add padding to bottom and top of screen for scrolling with the cursor
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
 ;; Kind-of workaround/fallback for smooth-scrolling sometimes failing
