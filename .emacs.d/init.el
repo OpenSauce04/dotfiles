@@ -176,7 +176,7 @@
 
 ;; Disable arrow keys
 (setq too-hardcore-backspace t)
-(setq too-hardcore-return t)
+(setq too-hardcore-return nil)
 (require 'hardcore-mode)
 (global-hardcore-mode)
 ;; Don't use hardcore-mode in minibuffers or eww
