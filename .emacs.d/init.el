@@ -181,9 +181,10 @@
 (setq too-hardcore-return nil)
 (require 'hardcore-mode)
 (global-hardcore-mode)
-;; Don't use hardcore-mode in minibuffers or eww
+;; Don't use hardcore-mode in minibuffers or certain modes
 (add-hook 'minibuffer-setup-hook (lambda () (hardcore-mode 0)))
 (add-hook 'minibuffer-exit-hook (lambda () (hardcore-mode 1)))
+(add-hook '2048-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'eww-mode-hook (lambda () (hardcore-mode 0)))
 
 ;; Trim trailing whitespaces
