@@ -74,13 +74,6 @@
 ;; Enable wc-mode when opening text files
 (add-hook 'text-mode-hook 'wc-mode)
 
-;; Enable Discord rich presence when using GUI mode
-(when window-system
-  (require 'elcord)
-  (setq elcord-quiet t) ;; Shut up connection failure messages
-  (setq elcord-display-buffer-details nil) ;; Don't show file details in status
-  (elcord-mode))
-
 ;; Make native-comp warnings shut up
 (setq native-comp-async-report-warnings-errors nil)
 
