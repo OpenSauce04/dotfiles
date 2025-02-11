@@ -59,6 +59,8 @@
 ;;else
   (set-frame-font "Cascadia Mono Medium 11" nil t))
 
+;; Show current line git blame info
+(global-blamer-mode 1)
 
 ;; Enable TODO highlighting
 (global-hl-todo-mode 1)
