@@ -189,6 +189,9 @@
 (add-hook 'snake-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'tetris-mode-hook (lambda () (hardcore-mode 0)))
 
+;; Automatically activate spell checking in Markdown files
+(add-hook 'markdown-mode-hook (lambda () (jinx-mode 1)))
+
 ;; Trim trailing whitespaces
 (require 'ws-butler)
 (add-hook 'prog-mode-hook #'ws-butler-mode)
