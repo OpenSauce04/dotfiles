@@ -23,6 +23,7 @@
 (depends-on "portage-modes")
 (depends-on "rainbow-delimiters")
 (depends-on "simple-httpd")
+(depends-on "sixcolors-mode")
 (depends-on "smooth-scrolling")
 (depends-on "spacious-padding")
 (depends-on "typit")

@@ -28,9 +28,14 @@
 
 ;; Conditional is a workaround MacPorts Emacs BS - Do not run the following if in terminal mode on MacOS
 (when (or (not (eq system-type 'darwin)) (window-system))
-  (set-scroll-bar-mode 'right)
+  ;; Disable built-in scrollbars
+  (scroll-bar-mode 0)
   ;; Only show fringes on right edge of buffers
   (fringe-mode '(0 . nil)))
+
+;; Use sixcolors scrollbar
+(setq sixcolors-colors '("#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" ))
+(sixcolors-mode 1)
 
 ;; Enable current line highlighting for prog-mode modes
 (add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
