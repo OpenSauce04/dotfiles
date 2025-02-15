@@ -1,9 +1,3 @@
-# == Start GNU screen ==
-if [[ $TERM != *"tmux"* ]]; then
-	exec tmux
-	exit
-fi
-
 # == Neofetch ==
 afetch
 
