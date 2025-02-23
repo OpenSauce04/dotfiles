@@ -13,6 +13,7 @@
 (depends-on "crystal-mode")
 (depends-on "dashboard")
 (depends-on "dtrt-indent")
+(depends-on "ellama")
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
 (depends-on "jinx")

@@ -22,6 +22,7 @@
 (tool-bar-mode 0)
 (spacious-padding-mode 1)
 (blink-cursor-mode 0)
+(setq ellama-auto-scroll t)
 
 ;; Show in-progress key sequences with no delay
 (setq echo-keystrokes 0.001)
