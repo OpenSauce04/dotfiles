@@ -12,6 +12,7 @@
 (depends-on "cmake-mode")
 (depends-on "crystal-mode")
 (depends-on "dashboard")
+(depends-on "dockerfile-mode")
 (depends-on "dtrt-indent")
 (depends-on "ellama")
 (depends-on "hardcore-mode")
