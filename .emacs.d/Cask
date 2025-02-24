@@ -24,6 +24,7 @@
 (depends-on "package-lint")
 (depends-on "portage-modes")
 (depends-on "rainbow-delimiters")
+(depends-on "rust-mode")
 (depends-on "simple-httpd")
 (depends-on "sixcolors-mode")
 (depends-on "smooth-scrolling")
