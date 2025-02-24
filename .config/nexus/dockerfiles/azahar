@@ -1,0 +1,10 @@
+FROM opensauce04/azahar-build-environment:testing
+
+#RUN apt-get update && apt-get install -y libfuse2
+
+#RUN ln -s /bin/clang-18 /bin/clang
+#RUN ln -s /bin/clang++-18 /bin/clang++
+#RUN ln -s /bin/clang-format-18 /bin/clang-format
+
+# Fix SDL2 config bullshit
+#RUN ln -s /usr/include /include

@@ -1,0 +1,20 @@
+FROM manjarolinux/base
+
+# Install package dependencies
+RUN pacman -Syu --noconfirm jruby thunar libxext libxrender libxtst libxxf86vm libxrandr libxcursor mesa fontconfig
+
+## Install Microsoft fonts
+RUN pacman -S --needed --noconfirm base-devel git
+WORKDIR /tmp/
+RUN git clone https://aur.archlinux.org/ttf-ms-fonts.git
+WORKDIR /tmp/ttf-ms-fonts/
+RUN chown -R nobody:nobody .
+RUN su -s /bin/bash -c 'makepkg -s' nobody
+RUN pacman -U --noconfirm ./ttf-ms-fonts-*.pkg.tar.zst
+WORKDIR /tmp/
+RUN rm -rf ttf-ms-fonts
+
+# Install gems
+COPY Gemfile* /tmp/gemfiles/
+WORKDIR /tmp/gemfiles/
+RUN jruby -S bundle install
