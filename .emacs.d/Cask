@@ -15,6 +15,7 @@
 (depends-on "dockerfile-mode")
 (depends-on "dtrt-indent")
 (depends-on "ellama")
+(depends-on "go-mode")
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
 (depends-on "jinx")
