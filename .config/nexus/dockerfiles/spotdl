@@ -1,0 +1,5 @@
+FROM debian:latest
+
+RUN apt-get update && apt upgrade -y && apt-get autoremove -y
+RUN apt-get install -y python3-pip ffmpeg
+RUN pip3 install --break-system-packages spotdl
