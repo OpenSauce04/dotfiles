@@ -171,6 +171,10 @@
 ;; Per-pixel scrolling
 ;;(pixel-scroll-precision-mode 1)
 
+;; Always split buffers vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
 ;; Add padding to bottom and top of screen for scrolling with the cursor
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
