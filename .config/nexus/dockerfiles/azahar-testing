@@ -1,4 +1,4 @@
-FROM opensauce04/azahar-build-environment:latest
+FROM opensauce04/azahar-build-environment:testing
 
 #RUN apt-get update && apt-get install -y libfuse2
 
