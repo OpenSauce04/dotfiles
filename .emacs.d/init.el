@@ -139,6 +139,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
+(setq ellama-session-auto-save nil)
 
 ;; Disable C-x C-c in GUI mode
 (when window-system
