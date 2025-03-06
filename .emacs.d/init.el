@@ -24,6 +24,11 @@
 (blink-cursor-mode 0)
 (setq ellama-auto-scroll t)
 
+;; Show git info of lines on side of screen
+(global-git-gutter-mode 1)
+(custom-set-variables
+ '(git-gutter:update-interval 1))
+
 ;; Show in-progress key sequences with no delay
 (setq echo-keystrokes 0.001)
 
