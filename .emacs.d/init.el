@@ -27,7 +27,13 @@
 ;; Show git info of lines on side of screen
 (global-git-gutter-mode 1)
 (custom-set-variables
- '(git-gutter:update-interval 1))
+ '(git-gutter:update-interval 1)
+ '(git-gutter:modified-sign " ")
+ '(git-gutter:added-sign " ")
+ '(git-gutter:deleted-sign " "))
+(set-face-background 'git-gutter:modified "dark magenta")
+(set-face-background 'git-gutter:added "dark green")
+(set-face-background 'git-gutter:deleted "dark red")
 
 ;; Show in-progress key sequences with no delay
 (setq echo-keystrokes 0.001)
