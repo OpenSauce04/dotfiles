@@ -208,6 +208,11 @@
 (add-hook 'snake-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'tetris-mode-hook (lambda () (hardcore-mode 0)))
 
+;; Register `rg` as a shortcut for ripgrep
+(defun rg ()
+  (interactive)
+  (call-interactively 'ripgrep-regexp))
+
 ;; Use pdf-tools instead of the built-in DocView for viewing PDFs
 (pdf-tools-install)  ; Standard activation command
 (pdf-loader-install) ; On demand loading, leads to faster startup time
