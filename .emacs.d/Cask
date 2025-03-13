@@ -20,6 +20,8 @@
 (depends-on "hardcore-mode")
 (depends-on "hl-todo")
 (depends-on "jinx")
+(depends-on "kotlin-mode")
+(depends-on "kotlin-ts-mode")
 (depends-on "lua-mode")
 (depends-on "markdown-mode")
 (depends-on "markdown-preview-mode")
