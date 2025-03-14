@@ -22,7 +22,6 @@
 (tool-bar-mode 0)
 (spacious-padding-mode 1)
 (blink-cursor-mode 0)
-(setq ellama-auto-scroll t)
 
 ;; Show git info of lines on side of screen
 (global-git-gutter-mode 1)
@@ -150,7 +149,6 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
-(setq ellama-session-auto-save nil)
 
 ;; Disable C-x C-c in GUI mode
 (when window-system

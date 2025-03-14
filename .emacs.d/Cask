@@ -14,7 +14,6 @@
 (depends-on "dashboard")
 (depends-on "dockerfile-mode")
 (depends-on "dtrt-indent")
-(depends-on "ellama")
 (depends-on "git-gutter")
 (depends-on "go-mode")
 (depends-on "hardcore-mode")
