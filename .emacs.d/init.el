@@ -212,8 +212,9 @@
   (call-interactively 'ripgrep-regexp))
 
 ;; Use pdf-tools instead of the built-in DocView for viewing PDFs
-(pdf-tools-install)  ; Standard activation command
-(pdf-loader-install) ; On demand loading, leads to faster startup time
+(when (not (eq system-type 'darwin))
+  (pdf-tools-install)  ; Standard activation command
+  (pdf-loader-install)) ; On demand loading, leads to faster startup time
 
 ;; Automatically activate spell checking in Markdown files
 (add-hook 'markdown-mode-hook (lambda () (jinx-mode 1)))
