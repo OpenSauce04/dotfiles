@@ -169,6 +169,9 @@
 ;; Disable electric indent
 (electric-indent-mode 0)
 
+;; Never insert tabs into indentation
+(setq-default indent-tabs-mode nil)
+
 ;; Enable dtrt-indent mode
 (dtrt-indent-global-mode 1)
 
