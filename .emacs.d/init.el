@@ -60,7 +60,7 @@
 
 ;; Override background color and enable transparent background
 (set-background-color "black")
-(add-to-list 'default-frame-alist '(alpha-background . 94))
+(add-to-list 'default-frame-alist '(alpha-background . 92))
 
 ;; Enable spacious-padding-mode + subtle mode line
 (spacious-padding-mode 1)
