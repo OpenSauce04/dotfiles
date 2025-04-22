@@ -110,7 +110,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; Force a redraw of entire Emacs window every second on ARM Linux to circumvent Asahi graphical issues
-(if (string-match "aarch64-unknown-linux-gnu" system-configuration)
+(if (and (string-match "aarch64-unknown-linux-gnu" system-configuration) (window-system))
     (run-with-timer 0 1 'redraw-display))
 
 ;; Configure markdown-preview-mode
