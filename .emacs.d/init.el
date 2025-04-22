@@ -20,6 +20,7 @@
 ;;# Basic self-explainitory visual settings
 (menu-bar-mode 0)
 (tool-bar-mode 0)
+(spacious-padding-mode 1)
 (blink-cursor-mode 0)
 
 ;; Show git info of lines on side of screen
@@ -36,12 +37,22 @@
 ;; Show in-progress key sequences with no delay
 (setq echo-keystrokes 0.001)
 
+;; Conditional is a workaround MacPorts Emacs BS - Do not run the following if in terminal mode on MacOS
+(when (or (not (eq system-type 'darwin)) (window-system))
+  ;; Disable built-in scrollbars
+  (scroll-bar-mode 0)
+  ;; Only show fringes on right edge of buffers
+  (fringe-mode '(0 . nil)))
+
 ;; Use sixcolors scrollbar
 (setq sixcolors-colors '("#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" ))
 (sixcolors-mode 1)
 
 ;; Enable current line highlighting for prog-mode modes
 (add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
+
+;; Enable subtle mode line appearance option provided by spacious-padding
+(setq spacious-padding-subtle-mode-line 1)
 
 ;; Enable line numbers for non-eww modes. TODO: Do this better
 (add-hook 'text-mode-hook 'display-line-numbers-mode 1)
@@ -57,21 +68,6 @@
 
 ;; Load theme
 (load-theme 'lush t)
-
-;; Override background color and enable transparent background
-(set-background-color "black")
-(add-to-list 'default-frame-alist '(alpha-background . 92))
-
-;; Enable spacious-padding-mode + subtle mode line
-(spacious-padding-mode 1)
-(setq spacious-padding-subtle-mode-line 1)
-
-;; Conditional is a workaround MacPorts Emacs BS - Do not run the following if in terminal mode on MacOS
-(when (or (not (eq system-type 'darwin)) (window-system))
-  ;; Disable built-in scrollbars
-  (scroll-bar-mode 0)
-  ;; Only show fringes on right edge of buffers
-  (fringe-mode '(0 . nil)))
 
 ;; Set font style and size (larger font on MacOS)
 (if (eq system-type 'darwin)
