@@ -1,1 +1,1 @@
-emacs -nw $@
+emacsclient -nw $@
