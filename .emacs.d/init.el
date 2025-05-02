@@ -65,6 +65,7 @@
 (setq dashboard-startup-banner 'logo)
 (setq dashboard-items '((recents . 15)))
 (dashboard-setup-startup-hook)
+(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
 
 ;; Load theme
 (load-theme 'lush t)
