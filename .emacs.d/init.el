@@ -42,7 +42,7 @@
   ;; Disable built-in scrollbars
   (scroll-bar-mode 0)
   ;; Only show fringes on right edge of buffers
-  (fringe-mode '(0 . nil)))
+  (add-hook 'server-after-make-frame-hook (lambda () (fringe-mode '(0 . nil)))))
 
 ;; Use sixcolors scrollbar
 (setq sixcolors-colors '("#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" ))
