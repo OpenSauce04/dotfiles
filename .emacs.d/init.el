@@ -22,7 +22,6 @@
 (tool-bar-mode 0)
 (spacious-padding-mode 1)
 (blink-cursor-mode 0)
-(xterm-mouse-mode 1)
 
 ;; Show git info of lines on side of screen
 (global-git-gutter-mode 1)
