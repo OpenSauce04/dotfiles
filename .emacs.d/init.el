@@ -63,7 +63,7 @@
 (setq initial-scratch-message nil)
 (require 'dashboard)
 (setq dashboard-startup-banner 'logo)
-(setq dashboard-items '((recents . 15)))
+(setq dashboard-items '())
 (dashboard-setup-startup-hook)
 (if (daemonp)
     (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))))
