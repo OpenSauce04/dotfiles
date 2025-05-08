@@ -1,4 +1,5 @@
-echo [user]
-emacs --daemon
 echo [root]
 doas emacs --daemon
+echo [user]
+emacs --daemon
+
