@@ -60,7 +60,9 @@
 
 ;; Save the recent files list after any file (non fundamental mode) is opened
 ;; TODO: Is there a better hook for this?
-(add-hook 'after-change-major-mode-hook 'recentf-save-list)
+(add-hook 'after-change-major-mode-hook
+          (lambda () (shut-up
+                       (recentf-save-list))))
 
 ;; Use Spacemacs dashboard instead of usual Emacs splash screen and startup message
 (setq inhibit-startup-message t)

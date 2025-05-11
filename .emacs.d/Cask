@@ -30,6 +30,7 @@
 (depends-on "rainbow-delimiters")
 (depends-on "ripgrep")
 (depends-on "rust-mode")
+(depends-on "shut-up")
 (depends-on "simple-httpd")
 (depends-on "sixcolors-mode")
 (depends-on "smooth-scrolling")
