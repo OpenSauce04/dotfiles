@@ -1,4 +1,0 @@
-FROM menci/archlinuxarm
-
-RUN pacman -Syu --noconfirm
-RUN pacman -S --noconfirm crystal shards make pkg-config gcc 
