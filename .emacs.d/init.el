@@ -190,9 +190,6 @@
 ;; Enable dtrt-indent mode
 (dtrt-indent-global-mode 1)
 
-;; Per-language indent tweaks
-(setq js-indent-level 2)
-
 ;; Set tab width to 4 spaces
 (setq-default tab-width 4)
 
