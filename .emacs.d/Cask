@@ -36,6 +36,7 @@
 (depends-on "smooth-scrolling")
 (depends-on "spacious-padding")
 (depends-on "typit")
+(depends-on "vterm")
 (depends-on "wc-mode")
 (depends-on "ws-butler")
 (depends-on "yaml-mode")
