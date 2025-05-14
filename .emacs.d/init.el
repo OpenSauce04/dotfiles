@@ -221,6 +221,7 @@
 (add-hook 'snake-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'tetris-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'vterm-mode-hook (lambda () (hardcore-mode 0)))
+(add-hook 'w3m-mode-hook (lambda () (hardcore-mode 0)))
 
 ;; Register `rg` as a shortcut for ripgrep
 (defun rg ()
