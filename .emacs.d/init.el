@@ -247,6 +247,17 @@
 ;; Set simple-httpd port
 (setq httpd-port 8000)
 
+;; ERC config
+(setq erc-server "irc.libera.chat"
+      erc-port 6697
+      erc-nick "opensauce04"
+      erc-autojoin-channels-alist
+      '(("libera.chat"
+         "#emacs-social"
+         "#gentoo-chat"
+         "#gnu"
+         "#linux")))
+
 ;; Better C-Backspace and C-Delete behaviour
 (defun my-backward-kill-spaces-or-char-or-word ()
   (interactive)
