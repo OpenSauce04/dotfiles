@@ -253,10 +253,8 @@
       erc-nick "opensauce04"
       erc-autojoin-channels-alist
       '(("libera.chat"
-         "#emacs-social"
          "#gentoo-chat"
-         "#gnu"
-         "#linux")))
+         "#gnu")))
 
 ;; Better C-Backspace and C-Delete behaviour
 (defun my-backward-kill-spaces-or-char-or-word ()
