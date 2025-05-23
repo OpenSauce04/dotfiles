@@ -218,6 +218,7 @@
 (add-hook '2048-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'dashboard-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'doc-view-mode-hook (lambda () (hardcore-mode 0)))
+(add-hook 'erc-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'eww-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'pdf-view-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'ripgrep-search-mode-hook (lambda () (hardcore-mode 0)))
