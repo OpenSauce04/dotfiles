@@ -1,5 +1,5 @@
 doas sh -c : # Warm up doas
 echo [user]
-torsocks emacs --daemon
+emacs --daemon
 echo [root]
-doas torsocks emacs --daemon
+doas emacs --daemon
