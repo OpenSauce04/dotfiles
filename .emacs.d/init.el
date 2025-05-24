@@ -259,6 +259,13 @@
          "#gnu")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
+(erc-log-mode)
+(setq erc-log-channels-directory "~/.emacs.d/erc/logs/")
+(make-directory erc-log-channels-directory t)
+(setq erc-save-buffer-on-part nil)
+(setq erc-save-queries-on-quit nil)
+(setq erc-log-write-after-insert t)
+(setq erc-log-write-after-send t)
 
 ;; Better C-Backspace and C-Delete behaviour
 (defun my-backward-kill-spaces-or-char-or-word ()
