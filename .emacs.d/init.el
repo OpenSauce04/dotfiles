@@ -248,6 +248,8 @@
 (setq httpd-port 8000)
 
 ;; ERC config
+(require 'erc)
+(add-to-list 'erc-modules 'scrolltobottom)
 (setq erc-server "irc.libera.chat"
       erc-port 6697
       erc-nick "opensauce04"
@@ -255,6 +257,8 @@
       '(("libera.chat"
          "#gentoo-chat"
          "#gnu")))
+(setq erc-fill-function 'erc-fill-wrap
+         erc-fill-static-center nil)
 
 ;; Better C-Backspace and C-Delete behaviour
 (defun my-backward-kill-spaces-or-char-or-word ()
