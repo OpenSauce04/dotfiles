@@ -256,7 +256,8 @@
       erc-autojoin-channels-alist
       '(("libera.chat"
          "#gentoo-chat"
-         "#gnu")))
+         "#gnu"
+         "#icecat")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
 (erc-log-mode)
