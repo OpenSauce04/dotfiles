@@ -87,9 +87,9 @@
 
 ;; Set font style and size (larger font on MacOS)
 (if (eq system-type 'darwin)
-  (add-to-list 'default-frame-alist '(font . "Cascadia Mono Medium 14"))
+  (add-to-list 'default-frame-alist '(font . "Monospace 14"))
 ;;else
-  (add-to-list 'default-frame-alist '(font . "Cascadia Mono Medium 11")))
+  (add-to-list 'default-frame-alist '(font . "Monospace 11")))
 
 ;; Show current line git blame info
 (global-blamer-mode 1)
