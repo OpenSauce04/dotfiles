@@ -298,10 +298,8 @@
         (css "https://github.com/tree-sitter/tree-sitter-css")
         (elisp "https://github.com/Wilfred/tree-sitter-elisp")
         (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
-        (kotlin "https://github.com/fwcd/tree-sitter-kotlin")
         (make "https://github.com/alemuller/tree-sitter-make")
-        (python "https://github.com/tree-sitter/tree-sitter-python")
-        (ruby "https://github.com/tree-sitter/tree-sitter-ruby")))
+        (python "https://github.com/tree-sitter/tree-sitter-python")))
 
 ;; Define function to install all grammars automatically
 (defun treesit-install-all-language-grammars ()
@@ -316,7 +314,5 @@
         (css-mode . css-ts-mode)
         (elisp-mode . elisp-ts-mode)
         (javascript-mode . js-ts-mode)
-        (kotlin-mode . kotlin-ts-mode)
         (make-mode . make-ts-mode)
-        (python-mode . python-ts-mode)
-        (ruby-mode . ruby-ts-mode)))
+        (python-mode . python-ts-mode)))
