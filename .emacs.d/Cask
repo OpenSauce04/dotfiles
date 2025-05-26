@@ -26,7 +26,6 @@
 (depends-on "markdown-mode")
 (depends-on "markdown-preview-mode")
 (depends-on "package-lint")
-(depends-on "pdf-tools")
 (depends-on "portage-modes")
 (depends-on "rainbow-delimiters")
 (depends-on "ripgrep")

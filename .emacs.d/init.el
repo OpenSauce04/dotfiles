@@ -218,7 +218,6 @@
 (add-hook 'doc-view-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'erc-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'eww-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'pdf-view-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'ripgrep-search-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'snake-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'tetris-mode-hook (lambda () (hardcore-mode 0)))
@@ -229,11 +228,6 @@
 (defun rg ()
   (interactive)
   (call-interactively 'ripgrep-regexp))
-
-;; Use pdf-tools instead of the built-in DocView for viewing PDFs
-(when (not (eq system-type 'darwin))
-  (pdf-tools-install)  ; Standard activation command
-  (pdf-loader-install)) ; On demand loading, leads to faster startup time
 
 ;; Automatically activate spell checking in Markdown files
 (add-hook 'markdown-mode-hook (lambda () (jinx-mode 1)))
