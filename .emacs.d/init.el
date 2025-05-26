@@ -3,6 +3,14 @@
 (when (eq system-type 'darwin)
   (setq native-comp-enable-subr-trampolines nil))
 
+;; Emacs init benchmarking
+(add-to-list 'load-path "~/.emacs.d/lisp/benchmark-init")
+(require 'benchmark-init-loaddefs)
+(benchmark-init/activate)
+; To disable collection of benchmark data after init is done.
+(add-hook 'after-init-hook 'benchmark-init/deactivate)
+
+
 ;;==== PACKAGES =====================================================================================
 ;; Shut up package-initialize warning
 (setq warning-suppress-log-types '((package reinitialization)))
@@ -14,10 +22,6 @@
   (require 'cask "~/.emacs.d/lisp/cask/cask.el"))
 (cask--initialize)
 
-;; Emacs init benchmarking
-(require 'benchmark-init)
-;; To disable collection of benchmark data after init is done.
-(add-hook 'after-init-hook 'benchmark-init/deactivate)
 
 ;;==== VISUAL TWEAKS =================================================================================
 ;;# Basic self-explainitory visual settings
