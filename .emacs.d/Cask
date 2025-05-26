@@ -7,6 +7,7 @@
 
 ;; Install packages
 (depends-on "2048-game")
+(depends-on "benchmark-init")
 (depends-on "blamer")
 (depends-on "cask-mode")
 (depends-on "cmake-mode")
