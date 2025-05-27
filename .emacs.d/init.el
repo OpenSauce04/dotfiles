@@ -107,7 +107,7 @@
 ;; Make native-comp warnings shut up
 (setq native-comp-async-report-warnings-errors nil)
 
-;; Variable font sizes for markdown headers
+;; Better Markdown header styling
 (custom-set-faces
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :underline t :weight bold))) t)
  '(markdown-header-delimiter-face ((t (:inherit markdown-header-face))) t))
