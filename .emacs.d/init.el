@@ -87,9 +87,6 @@
 ;;else
   (add-to-list 'default-frame-alist '(font . "Comic Code 11")))
 
-;; Show current line git blame info
-(global-blamer-mode 1)
-
 ;; Enable TODO highlighting
 (global-hl-todo-mode 1)
 
