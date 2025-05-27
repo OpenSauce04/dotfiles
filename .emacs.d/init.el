@@ -27,7 +27,6 @@
 ;;# Basic self-explainitory visual settings
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(spacious-padding-mode 1)
 (blink-cursor-mode 0)
 
 ;; Show git info of lines on side of screen
@@ -58,9 +57,6 @@
 
 ;; Enable current line highlighting for prog-mode modes
 (add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
-
-;; Enable subtle mode line appearance option provided by spacious-padding
-(setq spacious-padding-subtle-mode-line 1)
 
 ;; Enable line numbers for non-eww modes. TODO: Do this better
 (add-hook 'text-mode-hook 'display-line-numbers-mode 1)

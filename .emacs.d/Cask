@@ -32,7 +32,6 @@
 (depends-on "simple-httpd")
 (depends-on "sixcolors-mode")
 (depends-on "smooth-scrolling")
-(depends-on "spacious-padding")
 (depends-on "typit")
 (depends-on "vterm")
 (depends-on "w3m")
