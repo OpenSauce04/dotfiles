@@ -217,8 +217,6 @@
       erc-nick "opensauce04"
       erc-autojoin-channels-alist
       '(("libera.chat"
-         "#gentoo-chat"
-         "#gnu"
          "#icecat")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
