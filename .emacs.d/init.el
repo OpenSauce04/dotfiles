@@ -249,9 +249,10 @@
       (delete-horizontal-space))
     (t
       (delete-forward-char 1))))
-
 (global-set-key (kbd "<C-delete>") 'my-forward-kill-spaces-or-char-or-word)
 
+;; Map C-h to act like C-backspace
+(keymap-global-set "C-h" 'my-backward-kill-spaces-or-char-or-word)
 
 ;;==== TREE-SITTER ========================================================================================
 ;; Set list of tree-sitter grammar sources
