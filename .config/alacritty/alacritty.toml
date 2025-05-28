@@ -1,0 +1,26 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/hyper.toml"
+]
+
+[window]
+opacity = 0.85
+
+[font]
+size = 11.0
+
+[font.bold]
+family = "Comic Code"
+style = "Bold"
+
+[font.bold_italic]
+family = "Comic Code"
+style = "Bold Italic"
+
+[font.italic]
+family = "Comic Code"
+style = "Italic"
+
+[font.normal]
+family = "Comic Code"
+style = "Regular"
