@@ -1,1 +1,1 @@
-emacsclient -nw $@
+emacsclient -nw --socket-name=/tmp/emacs$(id -u)/server $@

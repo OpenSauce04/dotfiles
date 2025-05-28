@@ -1,5 +1,0 @@
-doas sh -c : # Warm up doas
-echo [user]
-emacs --daemon
-echo [root]
-doas emacs --daemon
