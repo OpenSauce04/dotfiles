@@ -43,14 +43,6 @@
 ;; Show in-progress key sequences with no delay
 (setq echo-keystrokes 0.001)
 
-;; Conditional is a workaround MacPorts Emacs BS - Do not run the following if in terminal mode on MacOS
-(when (or (not (eq system-type 'darwin)) (window-system))
-  ;; Disable built-in scrollbars
-  (scroll-bar-mode 0)
-  ;; Only show fringes on right edge of buffers
-  (fringe-mode '(0 . nil))
-  (add-hook 'server-after-make-frame-hook (lambda () (fringe-mode '(0 . nil)))))
-
 ;; Use sixcolors scrollbar
 (setq sixcolors-colors '("#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" ))
 (sixcolors-mode 1)
@@ -81,12 +73,6 @@
 ;; Load theme
 (load-theme 'lush t)
 
-;; Set font style and size (larger font on MacOS)
-(if (eq system-type 'darwin)
-  (add-to-list 'default-frame-alist '(font . "Comic Code 14"))
-;;else
-  (add-to-list 'default-frame-alist '(font . "Comic Code 11")))
-
 ;; Enable TODO highlighting
 (global-hl-todo-mode 1)
 
@@ -112,13 +98,6 @@
 ;; Disable bell (not really visual but shh)
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
-
-;; Force a redraw of entire Emacs window every second on ARM Linux to circumvent Asahi graphical issues
-(if (string-match "aarch64-unknown-linux-gnu" system-configuration)
-    (run-with-timer 0 3
-                    (lambda ()
-                      (if (window-system)
-                          (redraw-display)))))
 
 ;; Configure markdown-preview-mode
 (setq markdown-preview-stylesheets
@@ -161,9 +140,6 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 
-;; Disable C-x C-c in GUI mode
-(when window-system
-  (global-unset-key (kbd "C-x C-c")))
 ;; Disable C-z
 (global-unset-key (kbd "C-z"))
 
@@ -173,9 +149,6 @@
 ;; Enable ido mode
 (require 'ido)
 (ido-mode t)
-
-;; Enable clickable URLs
-(global-goto-address-mode)
 
 ;; Disable electric indent
 (electric-indent-mode 0)
