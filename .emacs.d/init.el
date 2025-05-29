@@ -56,19 +56,10 @@
 
 ;; Save the recent files list after any file (non fundamental mode) is opened
 ;; TODO: Is there a better hook for this?
+(recentf-mode 1)
 (add-hook 'after-change-major-mode-hook
           (lambda () (shut-up
                        (recentf-save-list))))
-
-;; Use Spacemacs dashboard instead of usual Emacs splash screen and startup message
-(setq inhibit-startup-message t)
-(setq initial-scratch-message nil)
-(require 'dashboard)
-(setq dashboard-startup-banner 'logo)
-(setq dashboard-items '())
-(dashboard-setup-startup-hook)
-(if (daemonp)
-    (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))))
 
 ;; Load theme
 (load-theme 'lush t)
@@ -140,6 +131,9 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 
+;; Disable Emacs startup message
+(setq inhibit-startup-message t)
+
 ;; Disable C-z
 (global-unset-key (kbd "C-z"))
 
@@ -184,7 +178,6 @@
 (add-hook 'minibuffer-setup-hook (lambda () (hardcore-mode 0)))
 (add-hook 'minibuffer-exit-hook (lambda () (hardcore-mode 1)))
 (add-hook '2048-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'dashboard-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'doc-view-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'erc-mode-hook (lambda () (hardcore-mode 0)))
 (add-hook 'eww-mode-hook (lambda () (hardcore-mode 0)))

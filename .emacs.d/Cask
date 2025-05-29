@@ -11,7 +11,6 @@
 (depends-on "cask-mode")
 (depends-on "cmake-mode")
 (depends-on "crystal-mode")
-(depends-on "dashboard")
 (depends-on "dockerfile-mode")
 (depends-on "dtrt-indent")
 (depends-on "git-gutter")
