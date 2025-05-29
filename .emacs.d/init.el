@@ -134,6 +134,10 @@
 ;; Disable Emacs startup message
 (setq inhibit-startup-message t)
 
+;; Make scratch a blank fundamental-mode buffer
+(setq initial-major-mode 'fundamental-mode)
+(setq initial-scratch-message "")
+
 ;; Disable C-z
 (global-unset-key (kbd "C-z"))
 
