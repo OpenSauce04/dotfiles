@@ -261,7 +261,8 @@
         (elisp "https://github.com/Wilfred/tree-sitter-elisp")
         (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
         (make "https://github.com/alemuller/tree-sitter-make")
-        (python "https://github.com/tree-sitter/tree-sitter-python")))
+        (python "https://github.com/tree-sitter/tree-sitter-python")
+        (ruby "https://github.com/tree-sitter/tree-sitter-ruby")))
 
 ;; Define function to install all grammars automatically
 (defun treesit-install-all-language-grammars ()
@@ -277,4 +278,5 @@
         (elisp-mode . elisp-ts-mode)
         (javascript-mode . js-ts-mode)
         (make-mode . make-ts-mode)
-        (python-mode . python-ts-mode)))
+        (python-mode . python-ts-mode)
+        (ruby-mode . ruby-ts-mode)))
