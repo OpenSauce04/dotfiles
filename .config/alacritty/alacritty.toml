@@ -8,9 +8,10 @@ style.blinking = "Never"
 
 [window]
 opacity = 0.85
+option_as_alt = "OnlyLeft"
 
 [font]
-size = 11.0
+size = 12.0
 
 [font.bold]
 family = "Comic Code"
@@ -27,3 +28,8 @@ style = "Italic"
 [font.normal]
 family = "Comic Code"
 style = "Regular"
+
+[keyboard]
+bindings = [
+    { key = "Slash", mods = "Control", chars = "\u001f" }
+]
