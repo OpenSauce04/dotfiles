@@ -50,10 +50,6 @@
 ;; Enable current line highlighting for prog-mode modes
 (add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
 
-;; Enable line numbers for non-eww modes. TODO: Do this better
-(add-hook 'text-mode-hook 'display-line-numbers-mode 1)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode 1)
-
 ;; Save the recent files list after any file (non fundamental mode) is opened
 ;; TODO: Is there a better hook for this?
 (recentf-mode 1)
