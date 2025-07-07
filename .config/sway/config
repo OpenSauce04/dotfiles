@@ -13,6 +13,9 @@ exec lxqt-policykit-agent &
 # Start notification daemon
 exec mako &
 
+# Start blueman daemon(?)
+exec blueman-applet &
+
 # Disable window border + title bar
 default_border none
 
