@@ -34,7 +34,7 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
-set $menu rofi -show drun -monitor 0
+set $menu rofi -show drun -monitor 1
 
 ### Output configuration
 #
@@ -257,8 +257,9 @@ bar {
 
     colors {
         statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        background #32323240
+        active_workspace #55555590 #55555590 #ffffff
+        inactive_workspace #32323240 #32323240 #ffffff
     }
 }
 
