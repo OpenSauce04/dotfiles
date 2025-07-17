@@ -1,0 +1,6 @@
+sleep 1s
+/usr/libexec/xdg-desktop-portal -r &
+sleep 1s
+/usr/libexec/xdg-desktop-portal-wlr &
+sleep 1s
+/usr/libexec/xdg-desktop-portal -r &

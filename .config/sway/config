@@ -10,6 +10,9 @@ exec gentoo-pipewire-launcher restart &
 # Start polkit agent
 exec lxqt-policykit-agent &
 
+# Start xdg-desktop-portal
+exec start-xdg-desktop-portal &
+
 # Start notification daemon
 exec mako &
 
