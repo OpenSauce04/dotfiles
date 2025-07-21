@@ -16,10 +16,10 @@
 (setq warning-suppress-log-types '((package reinitialization)))
 
 ;; Start Cask and load installed packages
-(if (eq system-type 'gnu/linux)
-  (require 'cask "/usr/share/emacs/site-lisp/cask/cask.el")
-;;else
-  (require 'cask "~/.emacs.d/lisp/cask/cask.el"))
+(require 'package-recipe "~/.emacs.d/lisp/package-build/package-recipe.el")
+(require 'package-build-badges "~/.emacs.d/lisp/package-build/package-build-badges.el")
+(require 'package-build "~/.emacs.d/lisp/package-build/package-build.el")
+(require 'cask "~/.emacs.d/lisp/cask/cask.el")
 (cask--initialize)
 
 
