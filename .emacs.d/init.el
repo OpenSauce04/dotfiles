@@ -28,6 +28,8 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (blink-cursor-mode 0)
+(line-number-mode 1)
+(column-number-mode 1)
 
 ;; Show git info of lines on side of screen
 (global-git-gutter-mode 1)
