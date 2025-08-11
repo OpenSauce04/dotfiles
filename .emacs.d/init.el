@@ -1,16 +1,3 @@
-;;=== INIT ===========================================================================================
-;; Workaround for https://trac.macports.org/ticket/71528
-(when (eq system-type 'darwin)
-  (setq native-comp-enable-subr-trampolines nil))
-
-;; Emacs init benchmarking
-(add-to-list 'load-path "~/.emacs.d/lisp/benchmark-init")
-(require 'benchmark-init-loaddefs)
-(benchmark-init/activate)
-; To disable collection of benchmark data after init is done.
-(add-hook 'after-init-hook 'benchmark-init/deactivate)
-
-
 ;;==== PACKAGES =====================================================================================
 ;; Shut up package-initialize warning
 (setq warning-suppress-log-types '((package reinitialization)))
@@ -75,9 +62,6 @@
 (setq wc-modeline-format "wordcount:%tw")
 ;; Enable wc-mode when opening text files
 (add-hook 'text-mode-hook 'wc-mode)
-
-;; Make native-comp warnings shut up
-(setq native-comp-async-report-warnings-errors nil)
 
 ;; Better Markdown header styling
 (custom-set-faces
@@ -158,9 +142,6 @@
 ;; Set tab width to 4 spaces
 (setq-default tab-width 4)
 
-;; Per-pixel scrolling
-;;(pixel-scroll-precision-mode 1)
-
 ;; Always split buffers vertically
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
@@ -170,24 +151,6 @@
 (smooth-scrolling-mode 1)
 ;; Kind-of workaround/fallback for smooth-scrolling sometimes failing
 (setq scroll-conservatively most-positive-fixnum)
-
-;; Disable arrow keys
-(setq too-hardcore-backspace t)
-(setq too-hardcore-return nil)
-(require 'hardcore-mode)
-(global-hardcore-mode)
-;; Don't use hardcore-mode in minibuffers or certain modes
-(add-hook 'minibuffer-setup-hook (lambda () (hardcore-mode 0)))
-(add-hook 'minibuffer-exit-hook (lambda () (hardcore-mode 1)))
-(add-hook '2048-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'doc-view-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'erc-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'eww-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'ripgrep-search-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'snake-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'tetris-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'vterm-mode-hook (lambda () (hardcore-mode 0)))
-(add-hook 'w3m-mode-hook (lambda () (hardcore-mode 0)))
 
 ;; Register `rg` as a shortcut for ripgrep
 (defun rg ()
@@ -200,9 +163,6 @@
 ;; Trim trailing whitespaces
 (require 'ws-butler)
 (add-hook 'prog-mode-hook #'ws-butler-mode)
-
-;; Set simple-httpd port
-(setq httpd-port 8000)
 
 ;; ERC config
 (require 'erc)
@@ -246,7 +206,7 @@
       (delete-forward-char 1))))
 (global-set-key (kbd "<C-delete>") 'my-forward-kill-spaces-or-char-or-word)
 
-;; Map C-h to act like C-backspace
+;; Map C-h to act like C-backspace (for terminal compatibility)
 (keymap-global-set "C-h" 'my-backward-kill-spaces-or-char-or-word)
 
 ;;==== TREE-SITTER ========================================================================================
