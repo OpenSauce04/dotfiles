@@ -1,5 +1,0 @@
-if [ "$EUID" -ne 0 ]; then
-    emacsclient -nw $@
-else
-    emacs -nw $@
-fi
