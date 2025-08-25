@@ -8,27 +8,28 @@ style.blinking = "Never"
 
 [window]
 option_as_alt = "OnlyLeft"
+opacity = 0.9
 
 [colors.primary]
-background = '0x101010'
+background = '#000000'
 
 [font]
-size = 12.0
+size = 15.0
 
 [font.bold]
-family = "Comic Code"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Comic Code"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Comic Code"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "Comic Code"
+family = "JetBrains Mono"
 style = "Regular"
 
 [keyboard]
