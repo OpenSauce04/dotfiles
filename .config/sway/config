@@ -52,9 +52,9 @@ output * bg ~/Pictures/Wallpapers/current fill
 # Laptop
 output eDP-1 scale 1.5
 # Desktop
-output DP-1 mode 1920x1080@144Hz pos 0 0
-output DP-3 mode 1920x1080@144Hz pos 0 0
-output HDMI-A-1 mode 1920x1080@144Hz pos 1920 0
+output DP-1 mode 1920x1080@120Hz pos 0 0
+output DP-3 mode 1920x1080@120Hz pos 0 0
+output HDMI-A-1 mode 1920x1080@120Hz pos 1920 0
 workspace 1 output DP-1
 workspace 1 output DP-3
 workspace 10 output HDMI-A-1
