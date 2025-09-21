@@ -449,7 +449,7 @@ KeyWinMaximize="Alt+Shift+e"
 # KeyWinNext="Alt+F6"
 
 #  Makes the active window occupy all work spaces.
-# KeyWinOccupyAll="Alt+F2"
+KeyWinOccupyAll="Alt+Shift+s"
 
 #  Switches focus to the previous window.
 # KeyWinPrev="Alt+Shift+F6"
