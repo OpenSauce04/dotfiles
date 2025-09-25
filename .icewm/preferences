@@ -437,7 +437,7 @@ KeyWinMaximize="Alt+Shift+e"
 # KeyWinMaximizeVert="Alt+Shift+F10"
 
 #  Posts the window menu.
-# KeyWinMenu="Alt+space"
+KeyWinMenu="Alt+Shift+s"
 
 #  Iconifies the active window.
 # KeyWinMinimize="Alt+F9"
@@ -449,7 +449,7 @@ KeyWinMaximize="Alt+Shift+e"
 # KeyWinNext="Alt+F6"
 
 #  Makes the active window occupy all work spaces.
-KeyWinOccupyAll="Alt+Shift+s"
+KeyWinOccupyAll="Alt+F2"
 
 #  Switches focus to the previous window.
 # KeyWinPrev="Alt+Shift+F6"
