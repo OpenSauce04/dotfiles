@@ -1,19 +1,53 @@
 ;;==== PACKAGES =====================================================================================
-;; Shut up package-initialize warning
-(setq warning-suppress-log-types '((package reinitialization)))
 
-;; Start Cask and load installed packages
-(require 'package-recipe "~/.emacs.d/lisp/package-build/package-recipe.el")
-(require 'package-build-badges "~/.emacs.d/lisp/package-build/package-build-badges.el")
-(require 'package-build "~/.emacs.d/lisp/package-build/package-build.el")
-(require 'cask "~/.emacs.d/lisp/cask/cask.el")
-(cask--initialize)
+;; Initialize package loading
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+(package-initialize)
 
+;;(unless (package-installed-p 'use-package)
+;;  (package-refresh-contents)
+;;  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+;; Load packages
+(use-package "2048-game")
+(use-package "blamer")
+(use-package "cask-mode")
+(use-package "cmake-mode")
+(use-package "crystal-mode")
+(use-package "dockerfile-mode")
+(use-package "dtrt-indent")
+(use-package "git-gutter")
+(use-package "go-mode")
+(use-package "hl-todo")
+(use-package "jinx")
+(use-package "kotlin-mode")
+(use-package "lua-mode")
+(use-package "lush-theme")
+(use-package "markdown-mode")
+(use-package "markdown-preview-mode")
+(use-package "package-lint")
+(use-package "portage-modes")
+(use-package "rainbow-delimiters")
+(use-package "ripgrep")
+(use-package "shut-up")
+(use-package "sixcolors-mode")
+(use-package "smooth-scrolling")
+(use-package "typit")
+(use-package "vterm")
+(use-package "w3m")
+(use-package "wc-mode")
+(use-package "ws-butler")
+(use-package "yaml-mode")
 
 ;;==== VISUAL TWEAKS =================================================================================
 ;;# Basic self-explainitory visual settings
 (menu-bar-mode 0)
-(tool-bar-mode 0)
 (blink-cursor-mode 0)
 (line-number-mode 1)
 (column-number-mode 1)
