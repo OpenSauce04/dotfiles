@@ -22,6 +22,7 @@
 (use-package "crystal-mode")
 (use-package "dockerfile-mode")
 (use-package "dtrt-indent")
+(use-package "elcord")
 (use-package "git-gutter")
 (use-package "go-mode")
 (use-package "hl-todo")
@@ -96,6 +97,12 @@
 (setq wc-modeline-format "wordcount:%tw")
 ;; Enable wc-mode when opening text files
 (add-hook 'text-mode-hook 'wc-mode)
+
+;; Enable Discord rich presence
+(require 'elcord)
+(setq elcord-quiet t) ;; Shut up connection failure messages
+(setq elcord-display-buffer-details nil) ;; Don't show file details in status
+(elcord-mode)
 
 ;; Better Markdown header styling
 (custom-set-faces
