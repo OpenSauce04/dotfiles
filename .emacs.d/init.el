@@ -20,7 +20,6 @@
 (use-package "dtrt-indent")
 (use-package "elcord")
 (use-package "git-gutter")
-(use-package "go-mode")
 (use-package "hl-todo")
 (use-package "jinx")
 (use-package "kotlin-mode")
@@ -245,6 +244,9 @@
 
 ;; Map C-h to act like C-backspace (for terminal compatibility)
 (keymap-global-set "C-h" 'my-backward-kill-spaces-or-char-or-word)
+
+;; Assign automatic modes for file extensions where needed
+(add-to-list 'auto-mode-alist '("\\.go\\'" . prog-mode))
 
 ;;==== TREE-SITTER ========================================================================================
 ;; Set list of tree-sitter grammar sources
