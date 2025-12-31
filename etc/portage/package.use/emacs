@@ -1,1 +1,1 @@
-app-editors/emacs dynamic-loading libxml2 tree-sitter -alsa -athena -cairo -dbus -gif -gtk -gui -harfbuzz -imagemagick -jit -jpeg -motif -png -sound -svg -tiff -toolkit-scroll-bars -webp -xft -xpm -X -Xaw3d
+app-editors/emacs dynamic-loading tree-sitter -alsa -athena -cairo -dbus -gif -gtk -gui -harfbuzz -imagemagick -jit -jpeg -libxml2 -motif -png -sound -svg -tiff -toolkit-scroll-bars -webp -xft -xpm -X -Xaw3d
