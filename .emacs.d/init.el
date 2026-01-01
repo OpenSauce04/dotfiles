@@ -28,6 +28,7 @@
 (use-package "markdown-mode")
 (use-package "markdown-preview-mode")
 (use-package "package-lint")
+(use-package "perfect-margin")
 (use-package "portage-modes")
 (use-package "rainbow-delimiters")
 (use-package "ripgrep")
