@@ -16,7 +16,6 @@
 (use-package 2048-game)
 (use-package blamer)
 (use-package browse-kill-ring)
-(use-package cask-mode)
 (use-package cmake-mode)
 (use-package crystal-mode)
 (use-package dockerfile-mode)
