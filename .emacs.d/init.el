@@ -92,7 +92,7 @@
 (setq-default word-wrap t)
 
 ;; Customize wc-mode string format
-(setq wc-modeline-format "wordcount:%tw")
+(setq wc-modeline-format "charcount:%tc wordcount:%tw")
 ;; Enable wc-mode when opening text files
 (add-hook 'text-mode-hook 'wc-mode)
 
