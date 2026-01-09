@@ -211,7 +211,9 @@
       erc-nick "opensauce04"
       erc-autojoin-channels-alist
       '(("libera.chat"
-         "#icecat")))
+         "#archlinux"
+         "#emacs-social"
+         "#netbsd")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
 (erc-log-mode)
