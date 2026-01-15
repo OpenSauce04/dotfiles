@@ -196,9 +196,6 @@
   (interactive)
   (call-interactively 'ripgrep-regexp))
 
-;; Automatically activate spell checking in Markdown files
-(add-hook 'markdown-mode-hook (lambda () (jinx-mode 1)))
-
 ;; Trim trailing whitespaces
 (require 'ws-butler)
 (add-hook 'prog-mode-hook #'ws-butler-mode)
