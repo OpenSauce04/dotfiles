@@ -210,6 +210,10 @@
       '(("libera.chat"
          "#archlinux"
          "#emacs-social"
+         "#linux"
+         "#MacOSX"
+         "#macports"
+         "#minecraft"
          "#netbsd")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
