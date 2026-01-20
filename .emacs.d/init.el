@@ -27,6 +27,7 @@
 (use-package kotlin-mode)
 (use-package lua-mode)
 (use-package lush-theme)
+(use-package magit)
 (use-package markdown-mode)
 (use-package markdown-preview-mode)
 (use-package multiple-cursors)
