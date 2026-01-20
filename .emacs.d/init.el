@@ -29,6 +29,7 @@
 (use-package lush-theme)
 (use-package markdown-mode)
 (use-package markdown-preview-mode)
+(use-package multiple-cursors)
 (use-package package-lint)
 (use-package perfect-margin)
 (use-package portage-modes)
@@ -253,6 +254,10 @@
 
 ;; Assign automatic modes for file extensions where needed
 (add-to-list 'auto-mode-alist '("\\.go\\'" . prog-mode))
+
+;; Set hotkeys for multiple-cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-x C-a") 'mc/edit-lines)
 
 ;;==== TREE-SITTER ========================================================================================
 ;; Set list of tree-sitter grammar sources
