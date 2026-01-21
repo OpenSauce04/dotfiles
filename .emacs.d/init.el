@@ -34,6 +34,7 @@
 (use-package elcord)
 (use-package git-gutter)
 (use-package hl-todo)
+(use-package inhibit-mouse)
 (use-package jinx)
 (use-package kotlin-mode)
 (use-package lua-mode)
@@ -183,6 +184,9 @@
 
 ;; Disable Emacs startup message
 (setq inhibit-startup-message t)
+
+;; Disable mouse support
+(inhibit-mouse-mode)
 
 ;; Make scratch a blank fundamental-mode buffer
 (setq initial-major-mode 'fundamental-mode)
