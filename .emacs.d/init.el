@@ -201,6 +201,9 @@
 ;; Disable mouse support
 (inhibit-mouse-mode)
 
+;; Make sure that Emacs maximizes properly
+(setq frame-resize-pixelwise t)
+
 ;; Make scratch a blank fundamental-mode buffer
 (setq initial-major-mode 'fundamental-mode)
 (setq initial-scratch-message "")
