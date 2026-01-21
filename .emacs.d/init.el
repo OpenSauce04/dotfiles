@@ -26,7 +26,6 @@
 (use-package 2048-game)
 (use-package blamer)
 (use-package browse-kill-ring)
-(use-package calle24)
 (use-package cmake-mode)
 (use-package crystal-mode)
 (use-package dockerfile-mode)
@@ -63,7 +62,7 @@
 
 ;;# Basic self-explainitory visual settings
 (menu-bar-mode 0)
-;;(tool-bar-mode 0) ;; TODO: Can I disable the toolbar while keeping the nice round corners on macOS?
+(tool-bar-mode 1) ;; We don't actually want the toolbar, this is just for a hack. See a few lines down.
 (blink-cursor-mode 0)
 (line-number-mode 1)
 (column-number-mode 1)
@@ -72,11 +71,25 @@
 (add-to-list 'default-frame-alist
              '(font . "JetBrains Mono-15"))
 
-;; Stinky mega-hack to make toolbar disappear without actually disabling it to have pretty rounded corners on macOS
-;; (don't run calle24-install)
-;; TODO: Make your own package for this
-(calle24-refresh-appearance)
-(add-hook 'compilation-mode-hook #'calle24-refresh-appearance)
+;; Hide toolbar without disabling tool-bar-mode to keep those nice-looking round macOS corners
+(defun nuke-toolbar (tb) ;; Hacked together using code from https://github.com/kickingvegas/calle24
+  (let* ((tb (if tb tb tool-bar-map))
+         (toolbar-items (cdr tb)))
+    (mapc (lambda (item)
+            (let* ((item-type (nth 1 item))
+                   (item-db (if (eq item-type 'menu-item) (nthcdr 4 item) nil))
+                   (item-image (if (eq item-type 'menu-item) (map-elt item-db :image) nil)))
+              (if item-image
+                  (setf (map-elt (nthcdr 4 item) :image) (tool-bar--image-expression nil)))))
+          toolbar-items)))
+
+(nuke-toolbar tool-bar-map)
+(nuke-toolbar info-tool-bar-map)
+(nuke-toolbar isearch-tool-bar-map)
+(nuke-toolbar grep-mode-tool-bar-map)
+(nuke-toolbar doc-view-tool-bar-map)
+(nuke-toolbar help-mode-tool-bar-map)
+(tool-bar--flush-cache)
 
 ;; Show git info of lines on side of screen
 (global-git-gutter-mode 1)
