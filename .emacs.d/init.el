@@ -1,5 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 
+;;==== EARLY RUN ====================================================================================
+
+(setq sixcolors-colors '("#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" ))
+
+
 ;;==== PACKAGES =====================================================================================
 
 ;; Initialize package loading
@@ -12,10 +17,16 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; Ensure that environment variables are correct
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 ;; Load packages
 (use-package 2048-game)
 (use-package blamer)
 (use-package browse-kill-ring)
+(use-package calle24)
 (use-package cmake-mode)
 (use-package crystal-mode)
 (use-package dockerfile-mode)
@@ -46,12 +57,25 @@
 (use-package ws-butler)
 (use-package yaml-mode)
 
+
 ;;==== VISUAL TWEAKS =================================================================================
+
 ;;# Basic self-explainitory visual settings
 (menu-bar-mode 0)
+;;(tool-bar-mode 0) ;; TODO: Can I disable the toolbar while keeping the nice round corners on macOS?
 (blink-cursor-mode 0)
 (line-number-mode 1)
 (column-number-mode 1)
+
+;; Change default font and font size
+(add-to-list 'default-frame-alist
+             '(font . "JetBrains Mono-15"))
+
+;; Stinky mega-hack to make toolbar disappear without actually disabling it to have pretty rounded corners on macOS
+;; (don't run calle24-install)
+;; TODO: Make your own package for this
+(calle24-refresh-appearance)
+(add-hook 'compilation-mode-hook #'calle24-refresh-appearance)
 
 ;; Show git info of lines on side of screen
 (global-git-gutter-mode 1)
@@ -68,7 +92,9 @@
 (setq echo-keystrokes 0.001)
 
 ;; Use sixcolors scrollbar
-(setq sixcolors-colors '("#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" "#FFFFFF" ))
+(when (window-system)
+  ;; Disable built-in scrollbars
+  (scroll-bar-mode 0))
 (sixcolors-mode 1)
 
 ;; Enable current line highlighting for prog-mode modes
@@ -146,6 +172,7 @@
 
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
+
 ;; Disable customize
 (setq custom-file "/dev/null")
 
@@ -260,7 +287,9 @@
 (require 'multiple-cursors)
 (global-set-key (kbd "C-x C-a") 'mc/edit-lines)
 
+
 ;;==== TREE-SITTER ========================================================================================
+
 ;; Set list of tree-sitter grammar sources
 (setq treesit-language-source-alist
       '(
