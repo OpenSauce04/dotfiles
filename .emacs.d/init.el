@@ -41,6 +41,7 @@
 (use-package magit)
 (use-package markdown-mode)
 (use-package markdown-preview-mode)
+(use-package modern-fringes)
 (use-package multiple-cursors)
 (use-package package-lint)
 (use-package perfect-margin)
@@ -90,6 +91,11 @@
 (nuke-toolbar doc-view-tool-bar-map)
 (nuke-toolbar help-mode-tool-bar-map)
 (tool-bar--flush-cache)
+
+;; Use nice-looking fringe icons
+(when (window-system)
+  (modern-fringes--init)
+  (define-fringe-bitmap 'left-curly-arrow [0] nil nil 'center))
 
 ;; Show git info of lines on side of screen
 (global-git-gutter-mode 1)
