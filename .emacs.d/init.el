@@ -142,6 +142,7 @@
 (require 'elcord)
 (setq elcord-quiet t) ;; Shut up connection failure messages
 (setq elcord-display-buffer-details nil) ;; Don't show file details in status
+(setq elcord-idle-message nil)
 (elcord-mode)
 
 ;; Better Markdown header styling
