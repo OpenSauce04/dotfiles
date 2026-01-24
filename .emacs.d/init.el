@@ -205,9 +205,6 @@
 ;; Disable Emacs startup message
 (setq inhibit-startup-message t)
 
-;; Disable mouse support
-(inhibit-mouse-mode)
-
 ;; Make sure that Emacs maximizes properly
 (setq frame-resize-pixelwise t)
 
