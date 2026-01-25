@@ -262,10 +262,10 @@
       erc-autojoin-channels-alist
       '(("libera.chat"
          "#archlinux"
+         "#emacs"
          "#emacs-social"
          "#linux"
          "#MacOSX"
-         "#macports"
          "#minecraft"
          "#netbsd")))
 (setq erc-fill-function 'erc-fill-wrap
