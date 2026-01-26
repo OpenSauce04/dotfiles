@@ -71,6 +71,7 @@
 ;; Change default font and font size
 (add-to-list 'default-frame-alist
              '(font . "JetBrains Mono-15"))
+(modify-frame-parameters nil '((ns-appearance . dark)))
 
 ;; Hide toolbar without disabling tool-bar-mode to keep those nice-looking round macOS corners
 (defun nuke-toolbar (tb) ;; Hacked together using code from https://github.com/kickingvegas/calle24
