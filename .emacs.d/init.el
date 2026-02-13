@@ -43,6 +43,7 @@
 (use-package markdown-preview-mode)
 (use-package modern-fringes)
 (use-package multiple-cursors)
+(use-package multi-vterm)
 (use-package package-lint)
 (use-package perfect-margin)
 (use-package portage-modes)
@@ -343,3 +344,11 @@
         (make-mode . make-ts-mode)
         (python-mode . python-ts-mode)
         (ruby-mode . ruby-ts-mode)))
+
+
+;;==== CUSTOM FUNCTIONS ========================================================================================
+
+(defun ncspot-buffer ()
+  (interactive)
+  (multi-vterm)
+  (rename-buffer "*ncspot*"))
