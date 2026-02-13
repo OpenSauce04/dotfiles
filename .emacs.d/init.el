@@ -43,7 +43,6 @@
 (use-package markdown-preview-mode)
 (use-package modern-fringes)
 (use-package multiple-cursors)
-(use-package multi-vterm)
 (use-package package-lint)
 (use-package perfect-margin)
 (use-package portage-modes)
@@ -59,10 +58,13 @@
 (use-package ws-butler)
 (use-package yaml-mode)
 
+;; Late load
+(use-package multi-vterm)
+
 
 ;;==== VISUAL TWEAKS =================================================================================
 
-;;# Basic self-explainitory visual settings
+;; Basic self-explainitory visual settings
 (menu-bar-mode 0)
 (tool-bar-mode 1) ;; We don't actually want the toolbar, this is just for a hack. See a few lines down.
 (blink-cursor-mode 0)
