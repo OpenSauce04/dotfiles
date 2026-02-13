@@ -61,6 +61,11 @@
 ;; Late load
 (use-package multi-vterm)
 
+;; Source
+;; Install via MELPA when merged: https://github.com/melpa/melpa/pull/9831
+(use-package winpulse
+  :vc (:url "https://github.com/xenodium/winpulse"
+       :rev :newest))
 
 ;;==== VISUAL TWEAKS =================================================================================
 
@@ -195,6 +200,8 @@
   </script>
 "))
 
+;; Display a momentary flash when switching buffers
+(winpulse-mode +1)
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
 
