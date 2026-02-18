@@ -31,14 +31,16 @@
 (use-package dockerfile-mode)
 (use-package dtrt-indent)
 (use-package elcord)
-(use-package git-gutter)
+(when (not (eq system-type 'android)) ;; Can't install git
+  (use-package git-gutter))
 (use-package hl-todo)
 (use-package inhibit-mouse)
 (use-package jinx)
 (use-package kotlin-mode)
 (use-package lua-mode)
 (use-package lush-theme)
-(use-package magit)
+(when (not (eq system-type 'android)) ;; Can't install git
+  (use-package magit))
 (use-package markdown-mode)
 (use-package markdown-preview-mode)
 (use-package modern-fringes)
@@ -52,33 +54,37 @@
 (use-package sixcolors-mode)
 (use-package smooth-scrolling)
 (use-package typit)
-(use-package vterm)
-(use-package w3m)
+(when (not (eq system-type 'android)) ;; Can't compile any code
+  (use-package vterm))
+(when (not (eq system-type 'android)) ;; Can't install w3m
+  (use-package w3m))
 (use-package wc-mode)
 (use-package ws-butler)
 (use-package yaml-mode)
 
 ;; Late load
-(use-package multi-vterm)
+(when (not (eq system-type 'android)) ;; Can't install vterm
+  (use-package multi-vterm))
 
 ;; Source
 ;; Install via MELPA when merged: https://github.com/melpa/melpa/pull/9831
-(use-package winpulse
-  :vc (:url "https://github.com/xenodium/winpulse"
-       :rev :newest))
+(when (not (eq system-type 'android)) ;; Can't install or use git, will be usable on MELPA
+  (use-package winpulse
+    :vc (:url "https://github.com/xenodium/winpulse"
+    :rev :newest)))
 
 ;;==== VISUAL TWEAKS =================================================================================
 
 ;; Basic self-explainitory visual settings
 (menu-bar-mode 0)
-(tool-bar-mode 1) ;; We don't actually want the toolbar, this is just for a hack. See a few lines down.
 (blink-cursor-mode 0)
 (line-number-mode 1)
 (column-number-mode 1)
 
 ;; Change default font and font size
-(add-to-list 'default-frame-alist
-             '(font . "JetBrains Mono-15"))
+(when (not (eq system-type 'android)) ;; Can't install fonts
+  (add-to-list 'default-frame-alist
+               '(font . "JetBrains Mono-15")))
 (modify-frame-parameters nil '((ns-appearance . dark)))
 
 ;; Hide toolbar without disabling tool-bar-mode to keep those nice-looking round macOS corners
@@ -93,13 +99,19 @@
                   (setf (map-elt (nthcdr 4 item) :image) (tool-bar--image-expression nil)))))
           toolbar-items)))
 
-(nuke-toolbar tool-bar-map)
-(nuke-toolbar info-tool-bar-map)
-(nuke-toolbar isearch-tool-bar-map)
-(nuke-toolbar grep-mode-tool-bar-map)
-(nuke-toolbar doc-view-tool-bar-map)
-(nuke-toolbar help-mode-tool-bar-map)
-(tool-bar--flush-cache)
+(if (eq system-type 'darwin)
+  (progn
+    (tool-bar-mode 1) ;; We don't actually want the toolbar, this is just a hack
+    (nuke-toolbar tool-bar-map)
+    (nuke-toolbar info-tool-bar-map)
+    (nuke-toolbar isearch-tool-bar-map)
+    (nuke-toolbar grep-mode-tool-bar-map)
+    (require 'doc-view)
+    (nuke-toolbar doc-view-tool-bar-map)
+    (nuke-toolbar help-mode-tool-bar-map)
+    (tool-bar--flush-cache))
+;else
+  (tool-bar-mode 0))
 
 ;; Use nice-looking fringe icons
 (when (window-system)
@@ -107,15 +119,16 @@
   (define-fringe-bitmap 'left-curly-arrow [0] nil nil 'center))
 
 ;; Show git info of lines on side of screen
-(global-git-gutter-mode 1)
-(custom-set-variables
- '(git-gutter:update-interval 1)
- '(git-gutter:modified-sign " ")
- '(git-gutter:added-sign " ")
- '(git-gutter:deleted-sign " "))
-(set-face-background 'git-gutter:modified "dark magenta")
-(set-face-background 'git-gutter:added "dark green")
-(set-face-background 'git-gutter:deleted "dark red")
+(when (not (eq system-type 'android)) ;; Can't use git-gutter
+  (global-git-gutter-mode 1)
+  (custom-set-variables
+   '(git-gutter:update-interval 1)
+   '(git-gutter:modified-sign " ")
+   '(git-gutter:added-sign " ")
+   '(git-gutter:deleted-sign " "))
+  (set-face-background 'git-gutter:modified "dark magenta")
+  (set-face-background 'git-gutter:added "dark green")
+  (set-face-background 'git-gutter:deleted "dark red"))
 
 ;; Show in-progress key sequences with no delay
 (setq echo-keystrokes 0.001)
@@ -201,7 +214,8 @@
 "))
 
 ;; Display a momentary flash when switching buffers
-(winpulse-mode +1)
+(when (not (eq system-type 'android)) ;; Can't use winpulse (yet)
+  (winpulse-mode +1))
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
 
@@ -357,7 +371,8 @@
 
 ;;==== CUSTOM FUNCTIONS ========================================================================================
 
-(defun ncspot-buffer ()
-  (interactive)
-  (multi-vterm)
-  (rename-buffer "*ncspot*"))
+(when (not (eq system-type 'android)) ;; Can't use vterm
+  (defun ncspot-buffer ()
+    (interactive)
+    (multi-vterm)
+    (rename-buffer "*ncspot*")))
