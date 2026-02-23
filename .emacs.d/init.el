@@ -59,6 +59,7 @@
 (when (not (eq system-type 'android)) ;; Can't install w3m
   (use-package w3m))
 (use-package wc-mode)
+(use-package winpulse)
 (use-package ws-butler)
 (use-package yaml-mode)
 
@@ -66,12 +67,6 @@
 (when (not (eq system-type 'android)) ;; Can't install vterm
   (use-package multi-vterm))
 
-;; Source
-;; Install via MELPA when merged: https://github.com/melpa/melpa/pull/9831
-(when (not (eq system-type 'android)) ;; Can't install or use git, will be usable on MELPA
-  (use-package winpulse
-    :vc (:url "https://github.com/xenodium/winpulse"
-    :rev :newest)))
 
 ;;==== VISUAL TWEAKS =================================================================================
 
@@ -214,8 +209,8 @@
 "))
 
 ;; Display a momentary flash when switching buffers
-(when (not (eq system-type 'android)) ;; Can't use winpulse (yet)
-  (winpulse-mode +1))
+(winpulse-mode +1)
+
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
 
