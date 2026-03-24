@@ -284,10 +284,8 @@
          "#archlinux"
          "#emacs"
          "#emacs-social"
-         "#linux"
-         "#MacOSX"
-         "#minecraft"
-         "#netbsd")))
+         "#netbsd"
+         "#pkgsrc")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
 (erc-log-mode)
