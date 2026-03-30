@@ -132,7 +132,9 @@
 (when (window-system)
   ;; Disable built-in scrollbars
   (scroll-bar-mode 0))
-(sixcolors-mode 1)
+(when (or (window-system) (not (eq system-type 'berkeley-unix)))
+  ;; Don't use sixcolors-mode on BSD TTY because it usually doesn't fit
+  (sixcolors-mode 1))
 
 ;; Enable current line highlighting for prog-mode modes
 (add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
