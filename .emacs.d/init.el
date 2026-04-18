@@ -213,6 +213,9 @@
 ;; Display a momentary flash when switching buffers
 (winpulse-mode +1)
 
+;; Configure width used by perfect-margin-mode
+(setq perfect-margin-visible-width 65)
+
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
 
