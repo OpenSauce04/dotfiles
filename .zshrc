@@ -1,5 +1,3 @@
-TERM=xterm-256color
-
 nclear
 
 # == Load P10K ==
