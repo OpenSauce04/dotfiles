@@ -334,6 +334,9 @@
 (require 'multiple-cursors)
 (global-set-key (kbd "C-x C-a") 'mc/edit-lines)
 
+;; Set spell checking languages
+(setq jinx-languages "en")
+
 
 ;;==== TREE-SITTER ========================================================================================
 
