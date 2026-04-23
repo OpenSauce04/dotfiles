@@ -290,6 +290,7 @@
          "#emacs"
          "#emacs-social"
          "#netbsd"
+         "#openbsd"
          "#pkgsrc")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
