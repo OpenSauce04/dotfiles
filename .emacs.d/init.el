@@ -132,7 +132,7 @@
 (when (window-system)
   ;; Disable built-in scrollbars
   (scroll-bar-mode 0))
-(when (or (window-system) (not (eq system-type 'berkeley-unix)))
+(when (or (window-system) (not (string-search "netbsd" system-configuration)))
   ;; Don't use sixcolors-mode on BSD TTY because it usually doesn't fit
   (sixcolors-mode 1))
 
