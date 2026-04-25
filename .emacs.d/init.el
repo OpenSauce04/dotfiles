@@ -216,6 +216,9 @@
 ;; Configure width used by perfect-margin-mode
 (setq perfect-margin-visible-width 65)
 
+;; Display the time in the modeline
+(display-time)
+
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
 
