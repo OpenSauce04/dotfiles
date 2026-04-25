@@ -49,6 +49,7 @@
 (use-package perfect-margin)
 (use-package portage-modes)
 (use-package rainbow-delimiters)
+(use-package rich-minority)
 (use-package ripgrep)
 (use-package shut-up)
 (use-package sixcolors-mode)
@@ -218,6 +219,10 @@
 
 ;; Display the time in the modeline
 (display-time)
+
+;; Hide minor modes in modeline
+(rich-minority-mode 1)
+(setf rm-blacklist "")
 
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
