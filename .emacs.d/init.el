@@ -78,9 +78,14 @@
 (column-number-mode 1)
 
 ;; Change default font and font size
-(when (not (eq system-type 'android)) ;; Can't install fonts
+(if (eq system-type 'android) ;; Can't install fonts
+  (add-to-list 'default-frame-alist
+               '(font . "Monospace 20"))
+;else
   (add-to-list 'default-frame-alist
                '(font . "JetBrains Mono-15")))
+
+;; Force dark theme on macOS
 (modify-frame-parameters nil '((ns-appearance . dark)))
 
 ;; Hide toolbar without disabling tool-bar-mode to keep those nice-looking round macOS corners
