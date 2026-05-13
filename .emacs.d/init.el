@@ -351,6 +351,16 @@
 ;; Set spell checking languages
 (setq jinx-languages "en")
 
+;; Work around strange double ctrl+space issue on Android
+(when (eq system-type 'android)
+  (defvar ctrl-space-damp-toggle t)
+  (defun set-mark-override (arg)
+    (interactive "P")
+    (when ctrl-space-damp-toggle
+      (set-mark-command arg))
+    (setq ctrl-space-damp-toggle (not ctrl-space-damp-toggle)))
+  (global-set-key (kbd "C-SPC") 'set-mark-override))
+
 
 ;;==== TREE-SITTER ========================================================================================
 
