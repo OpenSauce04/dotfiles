@@ -11,6 +11,6 @@ fi
 git clean -dfX
 
 ./autogen.sh
-./configure --without-all --with-gnutls --with-modules --with-threads --with-toolkit-scroll-bars --with-tree-sitter --enable-link-time-optimization
+./configure --without-all --with-gnutls --with-modules --with-threads --with-toolkit-scroll-bars --with-tree-sitter --with-x-toolkit=athena --enable-link-time-optimization
 gmake -j$EMACS_MAKE_JOBS
 gmake install
