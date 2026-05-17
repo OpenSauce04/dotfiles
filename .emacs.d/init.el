@@ -250,8 +250,9 @@
 (setq initial-major-mode 'fundamental-mode)
 (setq initial-scratch-message "")
 
-;; Disable C-z
+;; Disable some annoying default bindings
 (global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "<XF86Back>"))
 
 ;; Always follow symlinks rather than asking
 (setq vc-follow-symlinks t)
