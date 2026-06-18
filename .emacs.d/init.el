@@ -104,7 +104,6 @@
   (progn
     (tool-bar-mode 1) ;; We don't actually want the toolbar, this is just a hack
     (nuke-toolbar tool-bar-map)
-    (nuke-toolbar info-tool-bar-map)
     (nuke-toolbar isearch-tool-bar-map)
     (nuke-toolbar grep-mode-tool-bar-map)
     (require 'doc-view)
@@ -226,8 +225,8 @@
 (display-time)
 
 ;; Hide minor modes in modeline
-(rich-minority-mode 1)
-(setf rm-blacklist "")
+;;(rich-minority-mode 1) ;; Currently broken on Emacs 31+
+;;(setf rm-blacklist "")
 
 
 ;;==== BEHAVIOUR TWEAKS ===============================================================================
