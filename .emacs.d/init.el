@@ -88,7 +88,7 @@
 ;; Force dark theme on macOS
 (modify-frame-parameters nil '((ns-appearance . dark)))
 
-;; Hide toolbar without disabling tool-bar-mode to keep those nice-looking round macOS corners
+;; Hide toolbar without disabling tool-bar-mode to keep nicer-looking larger title bar style
 (defun nuke-toolbar (tb) ;; Hacked together using code from https://github.com/kickingvegas/calle24
   (let* ((tb (if tb tb tool-bar-map))
          (toolbar-items (cdr tb)))
