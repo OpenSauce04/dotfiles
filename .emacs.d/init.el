@@ -29,6 +29,7 @@
 (use-package cmake-mode)
 (use-package crystal-mode)
 (use-package dockerfile-mode)
+(use-package dirtree)
 (use-package dtrt-indent)
 (use-package elcord)
 (when (not (eq system-type 'android)) ;; Can't install git
