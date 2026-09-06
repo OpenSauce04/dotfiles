@@ -409,3 +409,10 @@
     (interactive)
     (multi-vterm)
     (rename-buffer "*x11*")))
+
+
+;;==== FINAL SETUP ========================================================================================
+
+;; Start vterm automatically
+(when (not (eq system-type 'android)) ;; Can't use vterm
+  (vterm))
