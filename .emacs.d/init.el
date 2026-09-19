@@ -89,31 +89,6 @@
 ;; Force dark theme on macOS
 (modify-frame-parameters nil '((ns-appearance . dark)))
 
-;; Hide toolbar without disabling tool-bar-mode to keep nicer-looking larger title bar style
-(defun nuke-toolbar (tb) ;; Hacked together using code from https://github.com/kickingvegas/calle24
-  (let* ((tb (if tb tb tool-bar-map))
-         (toolbar-items (cdr tb)))
-    (mapc (lambda (item)
-            (let* ((item-type (nth 1 item))
-                   (item-db (if (eq item-type 'menu-item) (nthcdr 4 item) nil))
-                   (item-image (if (eq item-type 'menu-item) (map-elt item-db :image) nil)))
-              (if item-image
-                  (setf (map-elt (nthcdr 4 item) :image) (tool-bar--image-expression nil)))))
-          toolbar-items)))
-
-(if (eq system-type 'darwin)
-  (progn
-    (tool-bar-mode 1) ;; We don't actually want the toolbar, this is just a hack
-    (nuke-toolbar tool-bar-map)
-    (nuke-toolbar isearch-tool-bar-map)
-    (nuke-toolbar grep-mode-tool-bar-map)
-    (require 'doc-view)
-    (nuke-toolbar doc-view-tool-bar-map)
-    (nuke-toolbar help-mode-tool-bar-map)
-    (tool-bar--flush-cache))
-;else
-  (tool-bar-mode 0))
-
 ;; Use nice-looking fringe icons
 (when (window-system)
   (modern-fringes--init)
@@ -416,3 +391,27 @@
 ;; Start vterm automatically
 (when (not (eq system-type 'android)) ;; Can't use vterm
   (vterm))
+
+;; Hide toolbar without disabling tool-bar-mode on macOS to keep nicer-looking larger title bar style
+(defun nuke-toolbar (tb) ;; Hacked together using code from https://github.com/kickingvegas/calle24
+  (let* ((tb (if tb tb tool-bar-map))
+         (toolbar-items (cdr tb)))
+    (mapc (lambda (item)
+            (let* ((item-type (nth 1 item))
+                   (item-db (if (eq item-type 'menu-item) (nthcdr 4 item) nil))
+                   (item-image (if (eq item-type 'menu-item) (map-elt item-db :image) nil)))
+              (if item-image
+                  (setf (map-elt (nthcdr 4 item) :image) (tool-bar--image-expression nil)))))
+          toolbar-items)))
+(if (eq system-type 'darwin)
+  (progn
+    (tool-bar-mode 1) ;; We don't actually want the toolbar, this is just a hack
+    (nuke-toolbar tool-bar-map)
+    (nuke-toolbar isearch-tool-bar-map)
+    (nuke-toolbar grep-mode-tool-bar-map)
+    (require 'doc-view)
+    (nuke-toolbar doc-view-tool-bar-map)
+    (nuke-toolbar help-mode-tool-bar-map)
+    (tool-bar--flush-cache))
+;else
+  (tool-bar-mode 0))
