@@ -328,9 +328,6 @@
 (require 'multiple-cursors)
 (global-set-key (kbd "C-x C-a") 'mc/edit-lines)
 
-;; Set spell checking languages
-(setq jinx-languages "en")
-
 ;; Work around strange double ctrl+space issue on Android
 (when (eq system-type 'android)
   (defvar ctrl-space-damp-toggle t)
