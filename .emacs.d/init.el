@@ -314,8 +314,12 @@
       (delete-forward-char 1))))
 (global-set-key (kbd "<C-delete>") 'my-forward-kill-spaces-or-char-or-word)
 
-;; Map C-h to act like C-backspace (for terminal compatibility)
-(keymap-global-set "C-h" 'my-backward-kill-spaces-or-char-or-word)
+;; Remap C-h to act like DEL on NetBSD-evbppc TTY, and like C-backspace everywhere else
+;; (On Wii U NetBSD, backspace triggers C-h for some reason. Doesn't happen on x86_64 NetBSD.)
+(if (and (not (window-system)) (string-search "powerpc-unknown-netbsd" system-configuration))
+  (define-key key-translation-map (kbd "C-h") (kbd "DEL"))
+;else
+  (keymap-global-set "C-h" 'my-backward-kill-spaces-or-char-or-word))
 
 ;; Assign automatic modes for file extensions where needed
 (add-to-list 'auto-mode-alist '("\\.go\\'" . prog-mode))
