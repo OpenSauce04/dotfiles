@@ -338,6 +338,15 @@
     (setq ctrl-space-damp-toggle (not ctrl-space-damp-toggle)))
   (global-set-key (kbd "C-SPC") 'set-mark-override))
 
+;; Mega stinky hack for broken cursor clearing on Wii U NetBSD
+(if (and (not (window-system)) (string-search "powerpc-unknown-netbsd" system-configuration))
+    (add-hook 'post-command-hook
+              (lambda () (shut-up
+                           (call-interactively 'hl-line-mode)
+                           (redisplay t)
+                           (call-interactively 'hl-line-mode)
+                           (redisplay t)))))
+
 
 ;;==== TREE-SITTER ========================================================================================
 
