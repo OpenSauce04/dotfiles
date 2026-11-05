@@ -13,4 +13,3 @@ git clean -dfX
 ./autogen.sh
 ./configure --without-all --with-cairo --with-gnutls --with-modules --with-threads --with-toolkit-scroll-bars --with-tree-sitter --with-x-toolkit=gtk --enable-link-time-optimization
 gmake -j$EMACS_MAKE_JOBS
-gmake install
