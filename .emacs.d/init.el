@@ -275,11 +275,10 @@
       erc-nick "opensauce04"
       erc-autojoin-channels-alist
       '(("libera.chat"
-         "#archlinux"
+         "#debian-offtopic"
          "#emacs"
          "#emacs-social"
          "#netbsd"
-         "#openbsd"
          "#pkgsrc")))
 (setq erc-fill-function 'erc-fill-wrap
          erc-fill-static-center nil)
